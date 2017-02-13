@@ -4,3 +4,14 @@ body {
 
 a {
   color: #00B7FF; }
+
+.type {
+  color: red;
+  bottom: 45px; }
+
+.typed {
+  z-index: 10;
+  background: none; }
+
+.poem-text {
+  position: relative; }

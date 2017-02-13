@@ -3,11 +3,14 @@
 		.module('myApp')
 		.controller('poemCtrl', poemCtrl);
 
-	poemCtrl.$inject = ['$http', '$routeParams'];
+	poemCtrl.$inject = ['$http', '$routeParams', '$window'];
 
-	function poemCtrl($http, $routeParams) {
+	function poemCtrl($http, $routeParams, $window) {
 		var vm = this;
 		var title = $routeParams.title;
+		$window.document.title = title;
+
+		vm.typedPoem = [];
 
 		$http.get('/api/titles/' + title).then(function successCallback(result) {
 			vm.poem = result.data[0];

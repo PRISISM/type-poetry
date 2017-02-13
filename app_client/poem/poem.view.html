@@ -5,4 +5,10 @@
 
 	<h3 ng-bind="vm.poem.title"></h3>
 	<h4 ng-bind="vm.poem.author"></h4>
+	
+	<div ng-repeat="line in vm.poem.lines">
+		<input class="form-control typed poem-text" type="text" required>
+		<input class="form-control type poem-text" type="text" placeholder="{{line}}" disabled>
+
+	</div>
 </div>

@@ -1,3 +1,5 @@
+$typecolor: red;
+
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +7,18 @@ body {
 
 a {
     color: #00B7FF;
+}
+
+.type {
+	color: $typecolor;
+	bottom: 45px; //move up to the previous
+}
+
+.typed {
+	z-index:10;
+	background:none;
+}
+
+.poem-text {
+	position: relative;
 }
