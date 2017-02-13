@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title(ng-bind="title") #{title}
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    base(href='/')
+    meta(charset='utf-8')
+
+    link(rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon")
+    //- link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css", rel="stylesheet", integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT", crossorigin="anonymous")
+    //- link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+    //- link(rel='stylesheet', href='/stylesheets/sweetalert2.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    //- link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    //- link(href="https://fonts.googleapis.com/css?family=Fredoka+One|PT+Sans|Open+Sans|Lato", rel="stylesheet")
+  body
+
+    div(ng-view)
+        block content
+
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" integrity="sha256-3SrLjPeRPa1ofM280r+OMcUjJZKLWJHr6SRtRu3dRb0=" crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js" integrity="sha256-SUsNyx9Kr9rHA3thrzSefdS883z1Q0ZOLXPF3p2Tt+o=" crossorigin="anonymous")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js" integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA=" crossorigin="anonymous")
+
+  //- script(src='/app.js')
+
+  //- script(src='/common/filters/formatRating.filter.js')
+  //- script(src='/common/filters/formatCount.filter.js')
+
+  //- script(src='/navbar/navbar.controller.js')
+  //- script(src='/home/home.controller.js')
+  //- script(src='/ranking/ranking.controller.js')
+
+  //- script(src='/common/services/aniData.service.js')
+  //- script(src='/common/services/ratings.service.js')
+
+  //- script(src='/common/directives/tooltip/tooltip.directive.js')
+
