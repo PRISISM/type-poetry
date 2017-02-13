@@ -27,6 +27,7 @@ app.use(require('node-sass-middleware')({
   debug: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_client')));
 
 app.use('/', index);
 app.use('/users', users);
