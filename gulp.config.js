@@ -1,4 +1,7 @@
 module.exports = function() {
+	var views = './app_server/views/';
+
+
 	var config = {
 		// All JS used to vet
 		alljs: [
@@ -6,7 +9,32 @@ module.exports = function() {
 			'./app_server/**/*.js',
 			'./app_api/**/*.js',
 			'./*.js'
-		]
+		],
+		index: views + 'layout.pug',
+		js: [
+			'./app_client/**/*.js',
+			'./public/javascripts/*.js'
+		],
+		css: [
+			'./public/stylesheets/*.css'
+		],
+		injectOptions: {
+			ignorePath: ['app_client', 'public']
+		},
+		/* Bower and NPM locations*/
+		bower: {
+			json: require('./bower.json'),
+			directory: './bower_components/',
+			ignorePath: '../..'
+		}
+	};
+
+	config.getWiredepDefaultOptions = function() {
+		var options = {
+			bowerJson: config.bower.json,
+			directory: config.bower.directory,
+			ignorePath: config.bower.ignorePath
+		};
 	};
 
 	return config;

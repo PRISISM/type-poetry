@@ -28,6 +28,7 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
+app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
 
 app.use('/', index);
 app.use('/users', users);

@@ -16,6 +16,28 @@ gulp.task('vet', function() {
 		.pipe($.jshint.reporter('fail'));
 });
 
+/* Wiredep injection of bower components and javascript files */
+gulp.task('wiredep', function() {
+	var options = config.getWiredepDefaultOptions();
+	var wiredep = require('wiredep').stream;
+
+	return gulp
+		.src(config.index)
+		.pipe(wiredep(options))
+		.pipe($.inject(gulp.src(config.js), config.injectOptions))
+		.pipe(gulp.dest('./app_server/views/'));
+});
+
+/* Injects custom CSS and runs wiredep */
+gulp.task('inject', ['wiredep'], function() {
+	log('Wiring up the bower css/js and our app js into the html!');
+
+	return gulp
+		.src(config.index)
+		.pipe($.inject(gulp.src(config.css), config.injectOptions))
+		.pipe(gulp.dest('./app_server/views/'));
+});
+
 /////////////////
 
 function log(msg) {

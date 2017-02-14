@@ -1,4 +1,5 @@
 $typecolor: red;
+$inputShift: 34px; //Amount to move up the DISABLED input to match the other
 
 body {
     padding: 50px;
@@ -11,7 +12,7 @@ a {
 
 .type {
 	color: $typecolor;
-	bottom: 45px; //move up to the previous
+	bottom: $inputShift; 
 }
 
 .typed {

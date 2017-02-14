@@ -2,3 +2,4 @@
 .env
 *.log
 .gitold
+/bower_components
