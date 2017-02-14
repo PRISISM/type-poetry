@@ -8,7 +8,7 @@
 	
 	<div ng-repeat="line in vm.poem.lines track by $index">
 		<div ng-if="vm.poemIndex == $index">
-			<input class="form-control typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" required>
+			<input class="form-control typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required>
 			<input class="form-control type poem-text" type="text" placeholder="{{line}}" disabled>
 			<p>{{vm.typedPoem[$index]}}</p> 
 			<span>{{vm.typedPoem[$index] == line}}</span>
