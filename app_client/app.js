@@ -16,6 +16,12 @@ function config ($routeProvider, $locationProvider) {
 			templateUrl: 'poem/poem.view.html'
 		})
 
+		.when('/authors', {
+			controller: 'authorsCtrl',
+			controllerAs: 'vm',
+			templateUrl: 'authors/authors.view.html'
+		})
+
 		.otherwise({redirectTo: '/'});
 
 	$locationProvider.html5Mode(true);

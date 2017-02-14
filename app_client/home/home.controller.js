@@ -3,16 +3,18 @@
 		.module('myApp')
 		.controller('homeCtrl', homeCtrl);
 
-	homeCtrl.$inject = ['$http'];
+	homeCtrl.$inject = ['$http', 'poemApi'];
 
-	function homeCtrl($http) {
+	function homeCtrl($http, poemApi) {
 		var vm = this;
 		vm.currentPage = 1;
 		vm.pageSize = 20;
 
-		$http.get('/api/titles').then(function(result) {
+		var poemPromise = poemApi.getPoems();
+		poemPromise.then(function(result) {
 			console.log(result);
 			vm.titles = result.data.titles;
 		});
+
 	}
 })();

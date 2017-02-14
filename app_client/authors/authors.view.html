@@ -1,0 +1,19 @@
+<div class="container">
+	<h1>Authors</h1>
+
+	<label for="search">Search:</label>
+	<input ng-model="vm.q" id="search" class="form-control" placeholder="Filter text">
+	<hr>
+
+	<div dir-paginate="author in vm.authors|filter:vm.q|itemsPerPage:20">
+		<a ng-bind="author" ng-href="/author/{{author}}"></a>
+	</div>
+
+	<dir-pagination-controls
+		max-size="20" 
+		direction-links="true" 
+		boundary-links="true">
+
+	</dir-pagination-controls>
+
+</div>
