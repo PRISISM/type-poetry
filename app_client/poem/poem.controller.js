@@ -18,7 +18,7 @@
 			vm.poemIndex = 0;
 			console.log(result);
 		});
-		
+
 		// $http.get('/api/titles/' + title).then(function successCallback(result) {
 		// 	vm.poem = result.data[0];
 		// 	vm.typedPoem = Array(vm.poem.lines.length);
@@ -31,7 +31,7 @@
 
 		/* Compares the current string to the respective line in the poem array */
 		vm.check = function(typed, index) {
-			if (typed == vm.poem.lines[index]) {
+			if (typed === vm.poem.lines[index]) {
 				vm.next();
 			}
 		};

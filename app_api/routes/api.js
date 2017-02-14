@@ -3,7 +3,7 @@ var request = require('request');
 // var poetryController = require('poetryController');
 
 /* Route to get all titles of poems */
-router.get('/titles', function(req,res) {
+router.get('/titles', function(req, res) {
 	var options = {
 		method: 'get',
 		uri: 'http://poetrydb.org/title',
@@ -11,8 +11,9 @@ router.get('/titles', function(req,res) {
 	};
 
 	request(options, function(err, response, body) {
-		if (err)
+		if (err) {
 			throw err;
+		}
 		res.json(body);
 	});
 
@@ -29,14 +30,15 @@ router.get('/titles/:title', function(req, res) {
 	};
 
 	request(options, function(err, response, body) {
-		if (err)
+		if (err) {
 			throw err;
+		}
 		res.json(body);
 	});
 });
 
 /* Route to get all authors of poems */
-router.get('/authors', function(req,res) {
+router.get('/authors', function(req, res) {
 	var options = {
 		method: 'get',
 		uri: 'http://poetrydb.org/author',
@@ -44,8 +46,9 @@ router.get('/authors', function(req,res) {
 	};
 
 	request(options, function(err, response, body) {
-		if (err)
+		if (err) {
 			throw err;
+		}
 		res.json(body);
 	});
 
@@ -54,7 +57,7 @@ router.get('/authors', function(req,res) {
 /* Route to get the exact list of poems from an author
    Is case sensitive.
 */
-router.get('/authors/:author', function(req,res) {
+router.get('/authors/:author', function(req, res) {
 	var options = {
 		method: 'get',
 		uri: 'http://poetrydb.org/author/' + req.params.author + ':abs/title',
@@ -62,8 +65,9 @@ router.get('/authors/:author', function(req,res) {
 	};
 
 	request(options, function(err, response, body) {
-		if (err)
+		if (err) {
 			throw err;
+		}
 		res.json(body);
 	});
 
