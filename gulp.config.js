@@ -1,6 +1,6 @@
 module.exports = function() {
 	var views = './app_server/views/';
-
+	var server = ['./app_server/', './app.js'];
 
 	var config = {
 		// All JS used to vet
@@ -26,7 +26,12 @@ module.exports = function() {
 			json: require('./bower.json'),
 			directory: './bower_components/',
 			ignorePath: '../..'
-		}
+		},
+
+		/* Nodemon */
+		defaultPort: 3000,
+		nodeServer: './bin/www',
+		server: server
 	};
 
 	config.getWiredepDefaultOptions = function() {
