@@ -4,10 +4,10 @@ angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'fo
 // Module configuration
 function config ($routeProvider, $locationProvider) {
 	$routeProvider
-		.when('/', {
-			controller: 'homeCtrl',
+		.when('/poems', {
+			controller: 'poemsCtrl',
 			controllerAs: 'vm',
-			templateUrl: 'home/home.view.html'
+			templateUrl: 'poems/poems.view.html'
 		})
 
 		.when('/poem/:title', {

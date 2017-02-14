@@ -1,11 +1,11 @@
 (function() {
 	angular
 		.module('myApp')
-		.controller('homeCtrl', homeCtrl);
+		.controller('poemsCtrl', poemsCtrl);
 
-	homeCtrl.$inject = ['$http', 'poemApi'];
+	poemsCtrl.$inject = ['$http', 'poemApi'];
 
-	function homeCtrl($http, poemApi) {
+	function poemsCtrl($http, poemApi) {
 		var vm = this;
 		vm.currentPage = 1;
 		vm.pageSize = 20;
