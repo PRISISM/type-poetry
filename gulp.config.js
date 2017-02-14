@@ -19,13 +19,16 @@ module.exports = function() {
 			'./public/stylesheets/*.css'
 		],
 		injectOptions: {
-			ignorePath: ['app_client', 'public']
+			// ignorePath: ['app_client', 'public']
 		},
+		build: './build/',
 		/* Bower and NPM locations*/
 		bower: {
 			json: require('./bower.json'),
 			directory: './bower_components/',
-			ignorePath: '../..'
+			replace: {
+				js: '<script src="./{{filePath}}"></script>'
+			}
 		},
 
 		/* Nodemon */
@@ -38,7 +41,8 @@ module.exports = function() {
 		var options = {
 			bowerJson: config.bower.json,
 			directory: config.bower.directory,
-			ignorePath: config.bower.ignorePath
+			ignorePath: config.bower.ignorePath,
+			replace: config.bower.replace
 		};
 	};
 

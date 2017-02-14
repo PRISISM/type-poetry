@@ -7,19 +7,19 @@ function config ($routeProvider, $locationProvider) {
 		.when('/poems', {
 			controller: 'poemsCtrl',
 			controllerAs: 'vm',
-			templateUrl: 'poems/poems.view.html'
+			templateUrl: 'app_client/poems/poems.view.html'
 		})
 
 		.when('/poem/:title', {
 			controller: 'poemCtrl',
 			controllerAs: 'vm',
-			templateUrl: 'poem/poem.view.html'
+			templateUrl: 'app_client/poem/poem.view.html'
 		})
 
 		.when('/authors', {
 			controller: 'authorsCtrl',
 			controllerAs: 'vm',
-			templateUrl: 'authors/authors.view.html'
+			templateUrl: 'app_client/authors/authors.view.html'
 		})
 
 		.otherwise({redirectTo: '/'});

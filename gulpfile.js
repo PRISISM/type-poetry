@@ -7,6 +7,10 @@ var $ = require('gulp-load-plugins')({
 	lazy: true
 });
 
+gulp.task('help', $.taskListing);
+
+gulp.task('default', ['help']);
+
 /* Vetting Code */
 gulp.task('vet', function() {
 	log('Analyzing souce with JSHint and JSCS');
@@ -40,10 +44,11 @@ gulp.task('inject', ['wiredep'], function() {
 	return gulp
 		.src(config.index)
 		.pipe($.inject(gulp.src(config.css), config.injectOptions))
+		.pipe($.replace(/="..\/..\/bower_components\//g, '="/bower_components/'))
 		.pipe(gulp.dest('./app_server/views/'));
 });
 
-/**/
+/* Starts a development server using nodemon */
 gulp.task('serve-dev', ['inject'], function() {
 	var isDev = true;
 
@@ -72,6 +77,32 @@ gulp.task('serve-dev', ['inject'], function() {
 		});
 
 });
+
+// gulp.task('clean-code', function(done) {
+// 	var files 
+// 	clean()
+// })
+
+/**/
+gulp.task('templatecache')
+
+/* Gulp task to produce an optimize production build in the ./build folder */
+gulp.task('optimize', ['inject'] , function() {
+		// var assets = $.useref.assets({searchPath:'./'})
+		log('Optimizing the javascript, css and html');
+
+		return gulp
+			.src(config.index)
+			.pipe($.plumber())
+
+		.pipe($.useref({
+				searchPath: './',
+				base: '../../'
+			}))
+			.pipe(gulp.dest(config.build));
+
+	})
+
 /////////////////
 
 function log(msg) {

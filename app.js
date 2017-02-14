@@ -9,26 +9,43 @@ var index = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
 var api = require('./app_api/routes/api');
 
+var environment = process.env.NODE_ENV;
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app_server' ,'views'));
+app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   debug: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app_client')));
-app.use('/bower_components',  express.static(path.join(__dirname, '/bower_components')));
+
+switch (environment) {
+  case 'build':
+    console.log('--BUILD--');
+    app.use(express.static('./build/'));
+    break;
+  default:
+    console.log('--DEV--');
+    app.use('/public', express.static(path.join(__dirname, 'public')));
+    app.use('/app_client', express.static(path.join(__dirname, 'app_client')));
+    app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
+    break;
+}
+
+// app.use('/public', express.static(path.join(__dirname, 'public')));
+// app.use('/app_client', express.static(path.join(__dirname, 'app_client')));
+// app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 
 app.use('/', index);
 app.use('/users', users);

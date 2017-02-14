@@ -8,40 +8,42 @@ html(ng-app="myApp")
 
     link(rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon")
 
+    <!-- build:css styles/lib.css-->
     <!-- bower:css -->
-    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:css styles/app.css-->
     //- inject:css
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/public/stylesheets/style.css")
     //- endinject
+    <!--endbuild-->
 
-    //- link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css", rel="stylesheet", integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT", crossorigin="anonymous")
-    //- link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
-    //- link(rel='stylesheet', href='/stylesheets/style.css')
-
-    //- link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-    //- link(href="https://fonts.googleapis.com/css?family=Fredoka+One|PT+Sans|Open+Sans|Lato", rel="stylesheet")
   body
 
     div(ng-view)
         block content
 
+  <!--build:js js/lib.js -->
   <!--bower:js-->
-  <script src="../../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../../bower_components/angular/angular.js"></script>
-  <script src="../../bower_components/angular-route/angular-route.js"></script>
-  <script src="../../bower_components/angular-animate/angular-animate.js"></script>
-  <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <!--endbower-->
-
+  <!--endbuild-->
+  
+  <!--build:js js/app.js -->
+  //- build:js js/app.js
   //- inject:js
-  script(src="/app.js")
-  script(src="/authors/authors.controller.js")
-  script(src="/poem/poem.controller.js")
-  script(src="/poems/poems.controller.js")
-  script(src="/common/services/api.factory.js")
-  script(src="/javascripts/dirPagination.js")
-  script(src="/javascripts/focusIf.min.js")
+  script(src="/app_client/app.js")
+  script(src="/app_client/authors/authors.controller.js")
+  script(src="/app_client/poem/poem.controller.js")
+  script(src="/app_client/poems/poems.controller.js")
+  script(src="/app_client/common/services/api.factory.js")
+  script(src="/public/javascripts/dirPagination.js")
+  script(src="/public/javascripts/focusIf.min.js")
   //- endinject
-
+  <!--endbuild-->
