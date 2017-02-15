@@ -14,9 +14,10 @@
 
 		poemPromise.then(function(result) {
 			vm.poem = result.data[0];
-			vm.poem.lines.map(function(s) {
+			var trimmedLines = vm.poem.lines.map(function(s) {
 				return s.trim();
 			});
+			vm.poem.lines = trimmedLines;
 			vm.typedPoem = Array(vm.poem.lines.length);
 			vm.poemIndex = 0;
 		});
@@ -31,7 +32,7 @@
 		/* Increments the poem index -- on last should trigger a modal/end. */
 		vm.next = function() {
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
-				vm.poemIndex = 0;
+				console.log('reached end');
 			} else {
 				vm.poemIndex++;
 			}
