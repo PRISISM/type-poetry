@@ -12,6 +12,7 @@ router.get('/titles', function(req, res) {
 
 	request(options, function(err, response, body) {
 		if (err) {
+			res.status(404);
 			throw err;
 		}
 		res.json(body);
@@ -31,6 +32,7 @@ router.get('/titles/:title', function(req, res) {
 
 	request(options, function(err, response, body) {
 		if (err) {
+			res.status(404);
 			throw err;
 		}
 		res.json(body);
@@ -47,6 +49,7 @@ router.get('/authors', function(req, res) {
 
 	request(options, function(err, response, body) {
 		if (err) {
+			res.status(404);
 			throw err;
 		}
 		res.json(body);
@@ -66,6 +69,7 @@ router.get('/authors/:author', function(req, res) {
 
 	request(options, function(err, response, body) {
 		if (err) {
+			res.status(404);
 			throw err;
 		}
 		res.json(body);

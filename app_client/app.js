@@ -1,14 +1,15 @@
 (function() {
-angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'focus-if']);
+	angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'focus-if']);
 
-// Module configuration
-function config ($routeProvider, $locationProvider) {
-	$routeProvider
-		.when('/poems', {
-			controller: 'poemsCtrl',
-			controllerAs: 'vm',
-			templateUrl: 'app_client/poems/poems.view.html'
-		})
+	// Module configuration
+	function config($routeProvider, $locationProvider, $routeParams) {
+		$routeProvider
+			.when('/poems', {
+				controller: 'poemsCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/poems/poems.view.html',
+				title: 'Poems'
+			})
 
 		.when('/poem/:title', {
 			controller: 'poemCtrl',
@@ -19,22 +20,51 @@ function config ($routeProvider, $locationProvider) {
 		.when('/authors', {
 			controller: 'authorsCtrl',
 			controllerAs: 'vm',
-			templateUrl: 'app_client/authors/authors.view.html'
+			templateUrl: 'app_client/authors/authors.view.html',
+			title: 'Authors'
 		})
 
-		.otherwise({redirectTo: '/'});
+		.when('/author/:name', {
+			controller: 'authorCtrl',
+			controllerAs: 'vm',
+			templateUrl: 'app_client/author/author.view.html'
+		})
 
-	$locationProvider.html5Mode(true);
-}
+		.when('/404', {
+			controller: 'errorCtrl',
+			controllerAs: 'vm',
+			templateUrl: 'app_client/error/404.view.html',
+			title: 'Error!'
+		})
 
-angular
-	.module('myApp')
-	.config(['$routeProvider', '$locationProvider', config])
-	// Set title based on view
-	.run(['$rootScope', function($rootScope) {
-		$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
-			$rootScope.title = current.$$route.title;
+		.otherwise({
+			redirectTo: '/'
 		});
 
-	}]);
+		$locationProvider.html5Mode(true);
+
+		// $httpProvider.interceptors.push('myInterceptor');
+	}
+
+	angular
+		.module('myApp')
+		.config(['$routeProvider', '$locationProvider', config])
+		// Set title based on view
+		.run(['$rootScope', '$routeParams', function($rootScope, $routeParams) {
+			$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
+				console.log($routeParams);
+				if ($routeParams && $routeParams.title) { // If a title is passed
+					$rootScope.title = $routeParams.title;
+				} 
+				else if ($routeParams && $routeParams.name) { // If an author name is passed
+					$rootScope.title = 'Poems by ' + $routeParams.name;
+				}
+				else {
+					console.log(current.$$route.title);
+					$rootScope.title = current.$$route.title;
+
+				}
+			});
+
+		}]);
 })();

@@ -54,6 +54,14 @@ gulp.task('serve-build',['optimize'], function() {
 	serve(false /*Is Build*/); 
 });
 
+/* Loads Google Fonts from a list and outputs to a folder */
+gulp.task('fonts', function() {
+	return gulp
+		.src('./fonts.list')
+		.pipe($.googleWebfonts(config.fontOptions))
+		.pipe((gulp.dest('./public/stylesheets')));
+});
+
 /* Starts a development server using nodemon */
 gulp.task('serve-dev', ['inject'], function() {
 	serve(true /*Is Dev*/);

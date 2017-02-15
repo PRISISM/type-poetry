@@ -44,6 +44,12 @@ module.exports = function() {
 			}
 		},
 
+		/* Font Options for Google Webfonts */
+		fontOptions: {
+			fontsDir: '',
+			cssDir: '',
+			cssFilename: 'fonts.css'
+		},
 		/* Nodemon */
 		defaultPort: 3000,
 		nodeServer: './bin/www',

@@ -8,6 +8,7 @@ poemApi.$inject = ['$http', '$location'];
 
 function poemApi($http, $location) {
 	
+
 	/* Get all titles of poems from the API 
 	   Returns the full response object with status code and data
 	*/
@@ -22,7 +23,7 @@ function poemApi($http, $location) {
 	   Returns the full response object with status code and data
 	*/
 	var getSinglePoem = function(title) {
-		return $http.get( $location.protocol() + '://' + location.host + '/api/titles/' + title)
+		return $http.get($location.protocol() + '://' + location.host + '/api/titles/' + title)
 			.then(function(result) {
 				return result;
 			});
