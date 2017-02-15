@@ -1,17 +1,1 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00B7FF; }
-
-.type {
-  color: red;
-  bottom: 34px; }
-
-.typed {
-  z-index: 10;
-  background: none; }
-
-.poem-text {
-  position: relative; }
+body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00b7ff}.type{color:red;bottom:34px}.typed{z-index:10;background:0 0}.poem-text{position:relative}

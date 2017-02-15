@@ -34,6 +34,7 @@ switch (environment) {
   case 'build':
     console.log('--BUILD--');
     app.use(express.static('./build/'));
+    app.set('views', path.join(__dirname, 'build'));
     break;
   default:
     console.log('--DEV--');

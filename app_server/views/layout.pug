@@ -1,5 +1,5 @@
 doctype html
-html(ng-app="myApp")
+html(ng-app="myApp" ng-strict-di)
   head
     title(ng-bind="title") #{title}
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -46,4 +46,8 @@ html(ng-app="myApp")
   script(src="/public/javascripts/dirPagination.js")
   script(src="/public/javascripts/focusIf.min.js")
   //- endinject
+
+  <!--inject:templates:js-->
+  <!--endinject-->
+  
   <!--endbuild-->

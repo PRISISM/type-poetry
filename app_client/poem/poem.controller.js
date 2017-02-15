@@ -14,20 +14,12 @@
 
 		poemPromise.then(function(result) {
 			vm.poem = result.data[0];
+			vm.poem.lines.map(function(s) {
+				return s.trim();
+			});
 			vm.typedPoem = Array(vm.poem.lines.length);
 			vm.poemIndex = 0;
-			console.log(result);
 		});
-
-		// $http.get('/api/titles/' + title).then(function successCallback(result) {
-		// 	vm.poem = result.data[0];
-		// 	vm.typedPoem = Array(vm.poem.lines.length);
-		// 	vm.poemIndex = 0;
-		// 	console.log(result);
-		// }, function errorCallback(err) {
-		// 	console.log(err);
-		// 	// handle err
-		// });
 
 		/* Compares the current string to the respective line in the poem array */
 		vm.check = function(typed, index) {

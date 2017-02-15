@@ -10,7 +10,7 @@ module.exports = function() {
 			'./app_api/**/*.js',
 			'./*.js'
 		],
-		index: views + 'layout.pug',
+		index: views + '*.pug',
 		js: [
 			'./app_client/**/*.js',
 			'./public/javascripts/*.js'
@@ -18,16 +18,28 @@ module.exports = function() {
 		css: [
 			'./public/stylesheets/*.css'
 		],
+		htmltemplates: './app_client/**/*.view.html',
 		injectOptions: {
 			// ignorePath: ['app_client', 'public']
 		},
 		build: './build/',
+		temp: '.tmp/',
 		/* Bower and NPM locations*/
 		bower: {
 			json: require('./bower.json'),
 			directory: './bower_components/',
 			replace: {
 				js: '<script src="./{{filePath}}"></script>'
+			}
+		},
+
+		/* Template Cache */
+		templateCache: {
+			file: 'templates.js',
+			options: {
+				module: 'myApp',
+				standAlone: false,
+				root: 'app_client/'
 			}
 		},
 

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var args = require('yargs').argv;
 var config = require('./gulp.config')(); // Runs and returns config object
+var del = require('del');
 var port = process.env.PORT || config.defaultPort;
 
 var $ = require('gulp-load-plugins')({
@@ -38,7 +39,7 @@ gulp.task('wiredep', function() {
 });
 
 /* Injects custom CSS and runs wiredep */
-gulp.task('inject', ['wiredep'], function() {
+gulp.task('inject', ['wiredep', 'templatecache'], function() {
 	log('Wiring up the bower css/js and our app js into the html!');
 
 	return gulp
@@ -48,9 +49,97 @@ gulp.task('inject', ['wiredep'], function() {
 		.pipe(gulp.dest('./app_server/views/'));
 });
 
+/* Starts a build server */
+gulp.task('serve-build',['optimize'], function() {
+	serve(false /*Is Build*/); 
+});
+
 /* Starts a development server using nodemon */
 gulp.task('serve-dev', ['inject'], function() {
-	var isDev = true;
+	serve(true /*Is Dev*/);
+});
+
+gulp.task('templatecache', ['clean-code'], function() {
+	log('Creating AngularJS $templatecache');
+	return gulp
+		.src(config.htmltemplates)
+		.pipe($.minifyHtml({
+			empty: true
+		}))
+		.pipe($.angularTemplatecache(
+			config.templateCache.file,
+			config.templateCache.options))
+		.pipe(gulp.dest(config.temp));
+});
+
+gulp.task('clean-code', function() {
+	log('Cleaning Code');
+	var files = [].concat(
+		'./.tmp/**/*.js',
+		'./build/**/*.pug',
+		'./build/js/**/*.js'
+	);
+	return clean(files);
+});
+
+/* Gulp task to produce an optimize production build in the ./build folder */
+gulp.task('optimize', ['inject'], function() {
+	// var assets = $.useref.assets({searchPath:'./'})
+	var cssFilter = $.filter('**/*.css', {restore: true});
+	var jsFilter = $.filter('**/*.js', {restore: true});
+
+	log('Optimizing the javascript, css and html');
+
+	var templateCache = config.temp + config.templateCache.file;
+	log(templateCache);
+
+		return gulp
+		.src(config.index)
+		.pipe($.plumber())
+		.pipe($.inject(gulp.src(templateCache, {
+			read: false
+		}), {
+			starttag: '<!--inject:templates:js-->',
+			endtag: '<!--endinject-->'
+		}))
+		.pipe($.useref({
+			searchPath: './',
+			base: '../../'
+		}))
+		/* CSS Minification */
+		.pipe(cssFilter)
+		.pipe($.csso())
+		.pipe(cssFilter.restore)
+		/* JS Minification */
+		.pipe(jsFilter)
+		.pipe($.uglify())
+		.pipe(jsFilter.restore)
+
+		.pipe(gulp.dest(config.build));
+
+})
+
+/////////////////
+
+function clean(path) {
+	log('Cleaning: ' + $.util.colors.blue(path));
+	return del(path); //promise 
+}
+
+function log(msg) {
+	if (typeof(msg) === 'object') {
+		for (var item in msg) {
+			if (msg.hasOwnProperty(item)) {
+				$.util.log($.util.colors.blue(msg[item]));
+			}
+		}
+	} else {
+		$.util.log($.util.colors.blue(msg));
+	}
+}
+
+function serve(isDev) {
+		var isDev = isDev;
 
 	var nodeOptions = {
 		script: config.nodeServer,
@@ -75,44 +164,4 @@ gulp.task('serve-dev', ['inject'], function() {
 		.on('exit', function() {
 			log('Nodemon exited cleanly');
 		});
-
-});
-
-// gulp.task('clean-code', function(done) {
-// 	var files 
-// 	clean()
-// })
-
-/**/
-gulp.task('templatecache')
-
-/* Gulp task to produce an optimize production build in the ./build folder */
-gulp.task('optimize', ['inject'] , function() {
-		// var assets = $.useref.assets({searchPath:'./'})
-		log('Optimizing the javascript, css and html');
-
-		return gulp
-			.src(config.index)
-			.pipe($.plumber())
-
-		.pipe($.useref({
-				searchPath: './',
-				base: '../../'
-			}))
-			.pipe(gulp.dest(config.build));
-
-	})
-
-/////////////////
-
-function log(msg) {
-	if (typeof(msg) === 'object') {
-		for (var item in msg) {
-			if (msg.hasOwnProperty(item)) {
-				$.util.log($.util.colors.blue(msg[item]));
-			}
-		}
-	} else {
-		$.util.log($.util.colors.blue(msg));
-	}
 }
