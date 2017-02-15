@@ -12,8 +12,9 @@ module.exports = function() {
 		],
 		index: views + '*.pug',
 		js: [
+			'./public/javascripts/*.js',
 			'./app_client/**/*.js',
-			'./public/javascripts/*.js'
+
 		],
 		css: [
 			'./public/stylesheets/*.css'

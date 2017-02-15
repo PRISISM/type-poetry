@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
@@ -15,3 +14,15 @@ a {
 
 .poem-text {
   position: relative; }
+
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: auto; }
+
+span[type-header] {
+  font-family: monospace;
+  letter-spacing: .15em; }

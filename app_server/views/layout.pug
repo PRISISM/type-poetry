@@ -21,6 +21,7 @@ html(ng-app="myApp" ng-strict-di)
     <!--endbuild-->
 
   body
+    include _nav.pug
 
     div(ng-view)
         block content
@@ -38,13 +39,15 @@ html(ng-app="myApp" ng-strict-di)
   <!--build:js js/app.js -->
   //- build:js js/app.js
   //- inject:js
+  script(src="/public/javascripts/dirPagination.js")
+  script(src="/public/javascripts/focusIf.min.js")
+  script(src="/public/javascripts/typeit.min.js")
   script(src="/app_client/app.js")
   script(src="/app_client/authors/authors.controller.js")
   script(src="/app_client/poem/poem.controller.js")
   script(src="/app_client/poems/poems.controller.js")
   script(src="/app_client/common/services/api.factory.js")
-  script(src="/public/javascripts/dirPagination.js")
-  script(src="/public/javascripts/focusIf.min.js")
+  script(src="/app_client/common/directives/type-header/type-header.directive.js")
   //- endinject
 
   <!--inject:templates:js-->
