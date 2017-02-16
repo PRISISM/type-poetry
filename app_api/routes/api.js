@@ -85,4 +85,13 @@ router.get('/authors/:author', function(req, res) {
 	});
 
 });
+
+/* Route that takes a search query and returns a list of titles */
+
+
+
+/* Route that takes a search query and returns a list of authors */
+
+
+
 module.exports = router;

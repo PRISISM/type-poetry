@@ -1,0 +1,16 @@
+/* Centered Column Styles */
+
+.row-centered{
+	text-align: center;
+}
+
+.col-centered {
+	display: inline-block;
+	float: none;
+
+	// Fixes float:none alignment
+	overflow: hidden;
+
+	margin-right: -4px;
+
+}

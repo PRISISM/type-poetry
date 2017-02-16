@@ -1,0 +1,65 @@
+.hero-home {
+	height: 100%;
+	background-color: $darkGrayColor;	
+
+}
+
+.hero-heading {
+	padding-top: 75px;
+	padding-bottom: 200px;
+
+	h1 {
+		font-size: 3.5em;
+		font-weight: 700;
+		text-align: center;	
+		color: white;
+		font-family: 'Roboto Slab', serif;
+		margin-bottom: 20px;
+	}
+	
+	p {
+		color: white;
+		font-family: 'Lato', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+	}
+}
+
+.info-wrapper {
+	position: absolute;
+	margin-top: -135px;
+	width: 100%;
+
+	.info-card {
+		height: 370px;
+		width: 300px;
+		background-color: white;
+		border: 1px solid #d3d3d3;
+
+		margin-left: 25px;
+		margin-right: 25px;
+
+		padding-top: 50px;
+
+		@include box-shadow(1px, 1px, 5px, rgba(0,0,0,0.75))
+
+		img {
+			height: 100px;
+			width: 100px;
+			padding-bottom: 30px;
+		}
+		
+		h3 {
+			font-weight: 700;
+			font-family: 'Asap', sans-serif;
+			padding-bottom: 10px;
+
+		}
+
+		p {
+			font-family: 'Lato', sans-serif;
+		}
+	}
+
+
+}

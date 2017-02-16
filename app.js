@@ -24,11 +24,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname),
-  dest: path.join(__dirname),
-  debug: true
-}));
+// app.use(require('node-sass-middleware')({
+//   src: path.join(__dirname),
+//   dest: path.join(__dirname),
+//   debug: true
+// }));
 
 switch (environment) {
   case 'build':

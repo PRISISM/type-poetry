@@ -1,8 +1,40 @@
 @font-face {
+	font-family: 'Asap';
+	font-style: normal;
+	font-weight: 400;
+	src: url(Asap-normal-400.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Asap';
+	font-style: normal;
+	font-weight: 700;
+	src: url(Asap-normal-700.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
 	font-family: 'Caveat Brush';
 	font-style: normal;
 	font-weight: 400;
 	src: url(Caveat_Brush-normal-400.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: url(Lato-normal-400.woff) format('woff');
+	unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+	font-family: 'Roboto Slab';
+	font-style: normal;
+	font-weight: 700;
+	src: url(Roboto_Slab-normal-700.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 

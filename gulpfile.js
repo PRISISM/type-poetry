@@ -62,6 +62,10 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('./public/stylesheets'));
 });
 
+gulp.task('styles:watch', function() {
+	gulp.watch(config.scss, ['styles']);
+});
+
 /* Loads Google Fonts from a list and outputs to a folder */
 gulp.task('fonts', function() {
 	return gulp
@@ -71,7 +75,7 @@ gulp.task('fonts', function() {
 });
 
 /* Starts a development server using nodemon */
-gulp.task('serve-dev', ['inject'], function() {
+gulp.task('serve-dev', ['inject', 'styles:watch'], function() {
 	serve(true /*Is Dev*/);
 });
 
