@@ -22,6 +22,12 @@
 		font-family: 'Lato', sans-serif;
 		text-align: center;
 		font-size: 1.5em;
+
+		a {
+			border-bottom: 1px dashed $lightGrayColor;
+			text-decoration: none;
+			color: $baseColor;
+		}
 	}
 }
 

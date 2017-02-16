@@ -42,12 +42,7 @@
 		/* Increments the poem index -- on last should trigger a modal/end. */
 		vm.next = function(isCaesura) {
 			if (isCaesura) {
-				swal({
-					title: 'Line break, take a breather!',
-					text: displayText.replace(/#1/, closeInSeconds),
-					timer: closeInSeconds * 1000,
-					showConfirmButton: false
-				});
+				console.log('Caesura...');
 			}
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
 				swal({
