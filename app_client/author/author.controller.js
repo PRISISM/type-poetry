@@ -7,10 +7,10 @@
 
 	function authorCtrl($http, $window, $routeParams, poemApi) {
 		var vm = this;
-		var name = $routeParams.name;
-		$window.document.title = 'Poems by ' + name;
+		vm.name = $routeParams.name;
+		$window.document.title = 'Poems by ' + vm.name;
 
-		var authorPromise = poemApi.getAuthorTitles(name);
+		var authorPromise = poemApi.getAuthorTitles(vm.name);
 		authorPromise.then(function(result) {
 			
 

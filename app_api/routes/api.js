@@ -72,7 +72,7 @@ router.get('/authors', function(req, res) {
 router.get('/authors/:author', function(req, res) {
 	var options = {
 		method: 'get',
-		uri: 'http://poetrydb.org/author/' + req.params.author + ':abs/title',
+		uri: 'http://poetrydb.org/author/' + encodeURIComponent(req.params.author) + ':abs/title',
 		json: true
 	};
 
