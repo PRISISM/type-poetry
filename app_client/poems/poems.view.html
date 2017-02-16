@@ -5,12 +5,12 @@
 	<input ng-model="vm.q" id="search" class="form-control" placeholder="Filter text">
 	<hr>
 
-	<div dir-paginate="title in vm.titles|filter:vm.q|itemsPerPage:20">
+	<div dir-paginate="title in vm.titles|filter:vm.q|itemsPerPage:50">
 		<a ng-bind="title" ng-href="/poem/{{title}}"></a>
 	</div>
 
 	<dir-pagination-controls
-		max-size="20" 
+		max-size="10" 
 		direction-links="true" 
 		boundary-links="true">
 

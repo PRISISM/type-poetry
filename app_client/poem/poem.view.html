@@ -1,20 +1,41 @@
-<div class="container">
-	
-	<h2>Poem</h2>
-	<hr>
-
-	<h3 ng-bind="vm.poem.title"></h3>
-	<h4 ng-bind="vm.poem.author"></h4>
-	
-	<div ng-repeat="line in vm.poem.lines track by $index">
-		<div ng-if="vm.poemIndex == $index">
-			<input class="form-control typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required>
-			<input class="form-control type poem-text" type="text" placeholder="{{line}}" disabled>
-			<p>{{vm.typedPoem[$index]}}</p> 
-			<span>{{vm.typedPoem[$index] == line}}</span>
-
-		</div>
-
-	</div>
-	<button ng-click="vm.next()"> Next </button>
-</div>
+<div class="main">
+    <!-- Main Section -->
+    <div class="hero-poem">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="hero-poem-heading">
+                        <h1 ng-bind="vm.poem.title"></h1>
+                        <p>by <a ng-href="author/{{vm.poem.author}}">{{vm.poem.author}}</a></p>
+                        <br>
+                        <p>{{vm.poem.linecount}} lines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Poem Section -->
+    <div class="poem-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 transcript-wrapper text-center">
+                    <h1>Transcript</h1>
+                    <p ng-repeat="typedLine in vm.typedPoem track by $index">
+                        {{typedLine}}
+                    </p>
+                </div>
+                <div class="col-sm-8">
+                    <h1 class="text-center">Input</h1>
+                    <div ng-repeat="line in vm.poem.lines track by $index">
+                        <div ng-if="vm.poemIndex == $index">
+                            <input class="form-control typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required>
+                            <input class="form-control type poem-text" type="text" placeholder="{{line}}" disabled>
+                            <p>{{vm.typedPoem[$index]}}</p>
+                            <span>{{vm.typedPoem[$index] == line}}</span>
+                        </div>
+                    </div>
+                    <button ng-click="vm.next()"> Next </button>
+                </div>
+            </div>
+        </div>
+    </div>

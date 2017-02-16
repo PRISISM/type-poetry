@@ -1,0 +1,33 @@
+.hero-poem {
+	height: 100%;
+	background-color: $darkGrayColor;	
+
+}
+
+/* Main section for poem page */
+.hero-poem-heading {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	h1 {
+		font-size: 2.5em;
+		font-weight: 700;
+		text-align: center;	
+		color: white;
+		font-family: 'Roboto Slab', serif;
+		margin-bottom: 10px;
+	}
+	
+	p {
+		color: white;
+		font-family: 'Lato', sans-serif;
+		text-align: center;
+		font-size: 1.5em;
+
+		a {
+			border-bottom: 1px dashed $lightGrayColor;
+			text-decoration: none;
+			color: $baseColor;
+		}
+	}
+}

@@ -44,22 +44,23 @@ nav.navbar {
   height: 100%;
   background-color: #66624c; }
 
-.hero-heading {
+/* Main section for home */
+.hero-home-heading {
   padding-top: 75px;
   padding-bottom: 200px; }
-  .hero-heading h1 {
+  .hero-home-heading h1 {
     font-size: 3.5em;
     font-weight: 700;
     text-align: center;
     color: white;
     font-family: 'Roboto Slab', serif;
     margin-bottom: 20px; }
-  .hero-heading p {
+  .hero-home-heading p {
     color: white;
     font-family: 'Lato', sans-serif;
     text-align: center;
     font-size: 1.5em; }
-    .hero-heading p a {
+    .hero-home-heading p a {
       border-bottom: 1px dashed #fbfbf9;
       text-decoration: none;
       color: #BEAD50; }
@@ -90,6 +91,31 @@ nav.navbar {
     .info-wrapper .info-card p {
       font-family: 'Lato', sans-serif; }
 
+.hero-poem {
+  height: 100%;
+  background-color: #66624c; }
+
+/* Main section for poem page */
+.hero-poem-heading {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .hero-poem-heading h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 10px; }
+  .hero-poem-heading p {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 1.5em; }
+    .hero-poem-heading p a {
+      border-bottom: 1px dashed #fbfbf9;
+      text-decoration: none;
+      color: #BEAD50; }
+
 .type {
   color: red;
   bottom: 34px; }
@@ -100,3 +126,17 @@ nav.navbar {
 
 .poem-text {
   position: relative; }
+
+.transcript-wrapper {
+  height: 100%;
+  padding-top: 25px;
+  border-right: 1px solid black; }
+  .transcript-wrapper h1 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px; }
+  .transcript-wrapper p {
+    word-break: break-all;
+    font-size: 16px;
+    font-family: 'Lora', serif; }
