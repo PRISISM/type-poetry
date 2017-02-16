@@ -17,8 +17,8 @@ html(ng-app="myApp" ng-strict-di)
 
     <!-- build:css styles/app.css-->
     //- inject:css
-    link(rel="stylesheet", href="/public/stylesheets/fonts.css")
-    link(rel="stylesheet", href="/public/stylesheets/style.css")
+    link(rel="stylesheet", href="/public/stylesheets/main.css")
+    link(rel="stylesheet", href="/public/fonts/fonts.css")
     //- endinject
     <!--endbuild-->
 
@@ -50,6 +50,7 @@ html(ng-app="myApp" ng-strict-di)
   script(src="/app_client/author/author.controller.js")
   script(src="/app_client/authors/authors.controller.js")
   script(src="/app_client/error/error.controller.js")
+  script(src="/app_client/home/home.controller.js")
   script(src="/app_client/poem/poem.controller.js")
   script(src="/app_client/poems/poems.controller.js")
   script(src="/app_client/common/services/api.factory.js")

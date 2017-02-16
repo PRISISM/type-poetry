@@ -17,7 +17,10 @@ module.exports = function() {
 
 		],
 		css: [
-			'./public/stylesheets/*.css'
+			'./public/stylesheets/*.css',
+			'./public/fonts/*.css'
+		],
+		scss: ['./public/stylesheets/**/*.scss'
 		],
 		htmltemplates: './app_client/**/*.view.html',
 		injectOptions: {

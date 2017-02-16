@@ -39,7 +39,7 @@ gulp.task('wiredep', function() {
 });
 
 /* Injects custom CSS and runs wiredep */
-gulp.task('inject', ['wiredep', 'templatecache'], function() {
+gulp.task('inject', ['wiredep', 'fonts', 'styles' ,'templatecache'], function() {
 	log('Wiring up the bower css/js and our app js into the html!');
 
 	return gulp
@@ -54,12 +54,19 @@ gulp.task('serve-build',['optimize'], function() {
 	serve(false /*Is Build*/); 
 });
 
+/* Compiles Sass files and outputs*/
+gulp.task('styles', function() {
+	return gulp.src(config.scss)
+		.pipe($.sass().on('error', $.sass.logError))
+		.pipe(gulp.dest('./public/stylesheets'));
+});
+
 /* Loads Google Fonts from a list and outputs to a folder */
 gulp.task('fonts', function() {
 	return gulp
 		.src('./fonts.list')
 		.pipe($.googleWebfonts(config.fontOptions))
-		.pipe((gulp.dest('./public/stylesheets')));
+		.pipe((gulp.dest('./public/fonts')));
 });
 
 /* Starts a development server using nodemon */
