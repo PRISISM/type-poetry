@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var request = require('request');
+var url = require('url');
 // var poetryController = require('poetryController');
 
 /* Route to get all titles of poems */
@@ -24,11 +25,18 @@ router.get('/titles', function(req, res) {
    Is case sensitive.
 */
 router.get('/titles/:title', function(req, res) {
+	var urlString = 'http://poetrydb.org/title/' + req.params.title + ':abs';
+	/* Accounting for the ’ symbol not being encoded by request */
+	var newString =  urlString.replace('’', '%E2%80%99');
+
 	var options = {
 		method: 'get',
-		uri: 'http://poetrydb.org/title/' + req.params.title + ':abs',
-		json: true
+		uri: newString,
+		json: true,
+		encoding: 'utf-8'
 	};
+
+	// console.log(options.uri.indexOf('’'));
 
 	request(options, function(err, response, body) {
 		if (err) {
