@@ -4,6 +4,13 @@
 	// Module configuration
 	function config($routeProvider, $locationProvider, $routeParams) {
 		$routeProvider
+			.when('/', {
+				controller: 'homeCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/home/home.view.html',
+				title: 'Home'
+
+			})
 			.when('/poems', {
 				controller: 'poemsCtrl',
 				controllerAs: 'vm',
@@ -55,11 +62,9 @@
 				console.log($routeParams);
 				if ($routeParams && $routeParams.title) { // If a title is passed
 					$rootScope.title = $routeParams.title;
-				} 
-				else if ($routeParams && $routeParams.name) { // If an author name is passed
+				} else if ($routeParams && $routeParams.name) { // If an author name is passed
 					$rootScope.title = 'Poems by ' + $routeParams.name;
-				}
-				else {
+				} else {
 					console.log(current.$$route.title);
 					$rootScope.title = current.$$route.title;
 

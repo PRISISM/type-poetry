@@ -57,6 +57,7 @@ gulp.task('serve-build',['optimize'], function() {
 /* Compiles Sass files and outputs*/
 gulp.task('styles', function() {
 	return gulp.src(config.scss)
+		.pipe($.sassGlob())
 		.pipe($.sass().on('error', $.sass.logError))
 		.pipe(gulp.dest('./public/stylesheets'));
 });
