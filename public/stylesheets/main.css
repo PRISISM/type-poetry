@@ -116,21 +116,35 @@ nav.navbar {
       text-decoration: none;
       color: #BEAD50; }
 
+.input-wrapper {
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #d3d3d3; }
+
 .type {
   color: red;
-  bottom: 34px; }
+  bottom: 300px; }
 
 .typed {
   z-index: 10;
   background: none; }
 
-.poem-text {
-  position: relative; }
+input.poem-text {
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  height: 300px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  word-break: break-all; }
 
 .transcript-wrapper {
   height: 100%;
-  padding-top: 25px;
-  border-right: 1px solid black; }
+  padding-top: 25px; }
   .transcript-wrapper h1 {
     font-family: 'Lora', serif;
     font-weight: 700;
