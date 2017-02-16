@@ -25,9 +25,10 @@ router.get('/titles', function(req, res) {
    Is case sensitive.
 */
 router.get('/titles/:title', function(req, res) {
-	var urlString = 'http://poetrydb.org/title/' + req.params.title + ':abs';
+	var urlString = 'http://poetrydb.org/title/' + encodeURIComponent(req.params.title) + ':abs';
 	/* Accounting for the ’ symbol not being encoded by request */
 	var newString =  urlString.replace('’', '%E2%80%99');
+	console.log(newString);
 
 	var options = {
 		method: 'get',
