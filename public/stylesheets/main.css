@@ -150,25 +150,29 @@ nav.navbar {
   padding-right: 50px;
   background-color: #d3d3d3; }
 
+/* Placeholder Input */
 .type {
   color: red;
-  bottom: 300px; }
+  bottom: 305px; }
 
+/* User Input */
 .typed {
   z-index: 10;
-  background: none; }
+  background: none;
+  padding-top: 4px; }
 
-input.poem-text {
+textarea.poem-text {
+  resize: none;
   position: relative;
   width: 100%;
   margin: 0px auto;
   font-family: 'Lato', sans-serif;
   font-size: 3em;
-  height: 300px;
+  height: 305px;
   background: transparent;
   border: 0;
   outline: 0;
-  word-break: break-all; }
+  word-wrap: break-word; }
 
 .transcript-wrapper {
   height: 100%;
@@ -179,6 +183,6 @@ input.poem-text {
     font-style: italic;
     margin-bottom: 20px; }
   .transcript-wrapper p {
-    word-break: break-all;
+    word-wrap: break-word;
     font-size: 16px;
     font-family: 'Lora', serif; }

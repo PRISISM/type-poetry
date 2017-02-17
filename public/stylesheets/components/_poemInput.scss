@@ -1,5 +1,6 @@
 $typecolor: red;
-$height: 300px; //Amount to move up the DISABLED input to match the other's size
+$heightOffet: 5px; // Accounts for difference in textarea?
+$height: 300px + 5px; //Amount to move up the DISABLED textarea to match the other's size
 
 .input-wrapper {
 	padding-top: 60px;
@@ -8,17 +9,22 @@ $height: 300px; //Amount to move up the DISABLED input to match the other's size
 	background-color: #d3d3d3;
 
 }
+/* Placeholder Input */
 .type {
 	color: $typecolor;
 	bottom: $height; 
 }
 
+/* User Input */
 .typed {
 	z-index:10;
 	background:none;
+	padding-top: 4px; // Move down
 }
 
-input.poem-text {
+textarea.poem-text {
+	// padding: 0;
+	resize: none;
 	position: relative;
 	width: 100%;
 	margin: 0px auto;
@@ -28,6 +34,6 @@ input.poem-text {
 	background: rgba(0,0,0,0);
 	border: 0;
 	outline: 0;
-	word-break: break-all;
+	word-wrap: break-word;
 }
 

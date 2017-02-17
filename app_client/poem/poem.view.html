@@ -29,8 +29,8 @@
 					
                     <div ng-repeat="line in vm.poem.lines track by $index">
                         <div ng-if="vm.poemIndex == $index">
-                            <input class=" typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required>
-                            <input class=" type poem-text" type="text" placeholder="{{line}}" disabled>
+                            <textarea class=" typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required></textarea>
+                            <textarea class=" type poem-text" type="text" placeholder="{{line}}" disabled></textarea>
                             <p>{{vm.typedPoem[$index]}}</p>
                             <span>{{vm.typedPoem[$index] == line}}</span>
                         </div>
