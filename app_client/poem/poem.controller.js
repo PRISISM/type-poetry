@@ -22,7 +22,8 @@
 			var trimmedLines = vm.poem.lines.map(function(s) {
 				return s
 				.trim()
-				.replace('—', '--');
+				.replace('—', '--')
+				.replace('’', '\'');
 			});
 			vm.poem.lines = trimmedLines;
 			vm.typedPoem = Array(vm.poem.lines.length);
@@ -36,15 +37,9 @@
 			}
 		};
 
-		/* Init for SweetAlert countdown */
-		var closeInSeconds = 3,
-			displayText = 'I will close in #1 seconds.',
-			timer;
-
 		/* Increments the poem index -- on last should trigger a modal/end. */
 		vm.next = function(isCaesura) {
 			if (isCaesura) {
-				// vm.typedPoem[vm.poemIndex] = '';
 				console.log('Caesura...');
 			}
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
@@ -68,15 +63,5 @@
 			}
 		};
 
-		timer = setInterval(function() {
-			closeInSeconds--;
-
-			if(closeInSeconds < 0){
-				clearInterval(timer);
-			}
-
-			angular.element('.sweet-alert > p').text(displayText.replace(/#1/, closeInSeconds));
-
-		});
 	}
 })();
