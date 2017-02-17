@@ -72,7 +72,7 @@ router.get('/authors', function(req, res) {
 router.get('/authors/:author', function(req, res) {
 	var options = {
 		method: 'get',
-		uri: 'http://poetrydb.org/author/' + encodeURIComponent(req.params.author) + ':abs/title',
+		uri: 'http://poetrydb.org/author/' + encodeURIComponent(req.params.author) + ':abs/title,linecount',
 		json: true
 	};
 
@@ -86,8 +86,21 @@ router.get('/authors/:author', function(req, res) {
 
 });
 
-/* Route that takes a search query and returns a list of titles */
+/* Route that takes a search query and returns a list of titles with their linecount */
+router.get('/search/:title', function(req, res) {
+	var options = {
+		method: 'get',
+		uri: 'http://poetrydb.org/title/' + encodeURIComponent(req.params.author) + '/title,linecount'
+	};
 
+	request(options, function(err, response, body) {
+		if (err) {
+			res.status(404);
+			throw err;
+		}
+		res.json(body);
+	});
+});
 
 
 /* Route that takes a search query and returns a list of authors */

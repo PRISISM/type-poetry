@@ -20,7 +20,9 @@
 			console.log(result);
 			vm.poem = result.data[0];
 			var trimmedLines = vm.poem.lines.map(function(s) {
-				return s.trim();
+				return s
+				.trim()
+				.replace('—', '--');
 			});
 			vm.poem.lines = trimmedLines;
 			vm.typedPoem = Array(vm.poem.lines.length);
@@ -48,7 +50,12 @@
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
 				vm.poemIndex++;
 				swal({
-					title: 'You have reached the end!'
+					title: 'You have reached the end!',
+					text: 'You have finished retyping this poem, ',
+					type: 'success',
+					allowEscapeKey: false,
+					allowOutsideClick: false,
+
 				});
 				console.log('reached end');
 			} else {
