@@ -1,3 +1,4 @@
+/* Box Shadow 1 */
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow:inset $top $left $blur $color;
@@ -27,4 +28,12 @@
 	} @else {
 		@error 'No value found for `#{$breakpoint}`.'
 	}
+}
+
+/* Box Shadow for Poem Buttons */
+@mixin poem-button-shadow($color) {
+	$newColor: darken($color, 10%);
+	-webkit-box-shadow: 0px 6px 0px $newColor;
+    -moz-box-shadow: 0px 6px 0px $newColor;
+    box-shadow: 0px 6px 0px $newColor;
 }

@@ -8,6 +8,7 @@
 	function poemCtrl($http, $routeParams, $window, poemApi) {
 		var vm = this;
 		var title = $routeParams.title;
+		vm.done = true; // When user is finished writing
 
 		$window.document.title = title;
 
@@ -23,7 +24,7 @@
 				return s
 				.trim()
 				.replace('—', '--')
-				.replace('’', '\'');
+				.replace('’', "'");
 			});
 			vm.poem.lines = trimmedLines;
 			vm.typedPoem = Array(vm.poem.lines.length);
@@ -44,6 +45,7 @@
 			}
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
 				vm.poemIndex++;
+				vm.done = true;
 				swal({
 					title: 'You have reached the end!',
 					text: 'You have finished retyping this poem, ',

@@ -1,0 +1,40 @@
+.flat-button {
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 70px;
+	margin: 10px;
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    border-radius: 6px;
+    overflow: hidden;
+
+	font-size: 28px;
+	font-weight: 700;
+	font-family: 'Lato', sans-serif;
+
+
+
+}	
+button.base {
+	border-color: $baseColor;
+	background-color: $baseColor;
+	color: white;
+	@include poem-button-shadow($baseColor);
+}
+
+button.accent {
+	border-color: $accentColor;
+	background-color: $accentColor;
+	color: white;
+	@include poem-button-shadow($accentColor);
+
+}
+
+button.complement {
+	border-color: $complementColor;
+	background-color: $complementColor;
+	color: white;
+	@include poem-button-shadow($complementColor);
+}

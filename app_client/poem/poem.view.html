@@ -31,7 +31,13 @@
                 </div>
                 <div class="col-sm-8 input-wrapper text-center">
                     <!-- <h1 class="text-center">Input</h1> -->
-					
+					<div ng-show="vm.done" ng-cloak>
+						<div class="row">
+							<button class="flat-button base">Repeat</button>
+							<button class="flat-button accent">Random</button>
+							<button class="flat-button complement">Share</button>
+						</div>
+					</div>
                     <div ng-repeat="line in vm.poem.lines track by $index">
                         <div ng-if="vm.poemIndex == $index">
                             <textarea class=" typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required></textarea>

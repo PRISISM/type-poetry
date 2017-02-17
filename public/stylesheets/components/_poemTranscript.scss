@@ -9,6 +9,7 @@
 		font-weight: 700;
 		font-style: italic;
 		border-bottom: 1px dotted $baseColor;
+		color: $sootColor;
 		
 		padding-bottom: 10px;
 		margin-bottom: 20px;
@@ -18,11 +19,12 @@
 		word-wrap: break-word;
 		font-size: 16px;
 		font-family: 'Lora', serif;
+		color: $sootColor;
 	}
 
 	div.transcript-text {
 		// overflow-y: scroll;
-		height: 500px;
+		height: 400px;
 		// min-height: 400px;
 	}
 }
