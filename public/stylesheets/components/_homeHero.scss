@@ -38,15 +38,37 @@
 	width: 100%;
 
 	.info-card {
-		height: 370px;
-		width: 300px;
 		background-color: white;
 		border: 1px solid #d3d3d3;
-
 		margin-left: 25px;
-		margin-right: 25px;
 
-		padding-top: 50px;
+		@include respond-to('medium') {
+			padding-top: 30px;
+			
+			// Halves margin between cards
+			margin-right: 0;
+
+			height: 340px;
+			width: 220px;
+		};
+
+		@include respond-to('large') {
+			padding-top: 30px;
+			
+			margin-right: 25px;	
+
+			height: 340px;
+			width: 270px
+		};
+
+		@include respond-to('huge') {
+			padding-top: 50px;	
+
+			margin-right: 25px;	
+
+			height: 370px;
+			width: 300px;
+		};
 
 		@include box-shadow(1px, 1px, 5px, rgba(0,0,0,0.75))
 
@@ -65,6 +87,19 @@
 
 		p {
 			font-family: 'Lato', sans-serif;
+
+			@include respond-to('medium') {
+				font-size: 12px;
+			};
+
+			@include respond-to('large') {
+				font-size: 13px;
+			};
+
+			@include respond-to('huge') {
+				font-size: 14px;
+			};
+
 		}
 	}
 
