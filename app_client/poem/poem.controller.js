@@ -46,10 +46,10 @@
 				console.log('Caesura...');
 			}
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
+				vm.poemIndex++;
 				swal({
 					title: 'You have reached the end!'
 				});
-				vm.poemIndex++;
 				console.log('reached end');
 			} else {
 				vm.poemIndex++;

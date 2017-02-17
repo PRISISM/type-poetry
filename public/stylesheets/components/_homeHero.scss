@@ -42,7 +42,17 @@
 		border: 1px solid #d3d3d3;
 		margin-left: 25px;
 
-		@include respond-to('medium') {
+		@include respond-to('small') {
+			padding-top: 30px;
+			
+			// Halves margin between cards
+			margin-right: 0;
+
+			height: 340px;
+			width: 180px;
+		};
+
+		@include respond-to('small-med') {
 			padding-top: 30px;
 			
 			// Halves margin between cards
@@ -54,7 +64,7 @@
 
 		@include respond-to('large') {
 			padding-top: 30px;
-			
+
 			margin-right: 25px;	
 
 			height: 340px;
@@ -87,6 +97,10 @@
 
 		p {
 			font-family: 'Lato', sans-serif;
+
+			@include respond-to('small') {
+				font-size: 12px;
+			};
 
 			@include respond-to('medium') {
 				font-size: 12px;

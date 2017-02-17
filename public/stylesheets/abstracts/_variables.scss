@@ -14,6 +14,7 @@ $baseDarkGrayColor: #424242;
  */
 $breakpoints: (
 	'small': (min-width: 600px),
+	'small-med': (min-width: 750px),
 	'medium': (min-width: 800px),
 	'large': (min-width: 1000px),
 	'huge': (min-width: 1200px)

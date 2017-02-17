@@ -81,7 +81,13 @@ nav.navbar {
     -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); }
-    @media (min-width: 800px) {
+    @media (min-width: 600px) {
+      .info-wrapper .info-card {
+        padding-top: 30px;
+        margin-right: 0;
+        height: 340px;
+        width: 180px; } }
+    @media (min-width: 750px) {
       .info-wrapper .info-card {
         padding-top: 30px;
         margin-right: 0;
@@ -109,6 +115,9 @@ nav.navbar {
       padding-bottom: 10px; }
     .info-wrapper .info-card p {
       font-family: 'Lato', sans-serif; }
+      @media (min-width: 600px) {
+        .info-wrapper .info-card p {
+          font-size: 12px; } }
       @media (min-width: 800px) {
         .info-wrapper .info-card p {
           font-size: 12px; } }
