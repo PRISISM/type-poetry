@@ -2,18 +2,21 @@
 	display: inline-block;
 	cursor: pointer;
 	text-decoration: none;
-	padding: 70px;
+	padding: 5px;
 	margin: 10px;
 	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
     border-style: solid;
     border-width: 0px 0px 3px;
     border-radius: 6px;
     overflow: hidden;
+	text-align: center;
 
 	font-size: 28px;
 	font-weight: 700;
 	font-family: 'Lato', sans-serif;
-
+	
+	height: 200px;
+	width: 200px;
 
 
 }	
