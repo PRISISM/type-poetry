@@ -42,6 +42,7 @@
 		/* Increments the poem index -- on last should trigger a modal/end. */
 		vm.next = function(isCaesura) {
 			if (isCaesura) {
+				// vm.typedPoem[vm.poemIndex] = '';
 				console.log('Caesura...');
 			}
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
