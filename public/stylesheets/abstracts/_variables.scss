@@ -14,6 +14,7 @@ $sootColor: #606060;
 	Reference: https://sass-guidelin.es/#responsive-web-design-and-breakpoints
  */
 $breakpoints: (
+	'tiny': (min-width: 300px),
 	'small': (min-width: 600px),
 	'small-med': (min-width: 750px),
 	'medium': (min-width: 800px),

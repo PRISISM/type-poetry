@@ -6,11 +6,7 @@
 
 /* Main section for home */
 .hero-home-heading {
-	padding-top: 75px;
-	padding-bottom: 200px;
-
 	h1 {
-		font-size: 3.5em;
 		font-weight: 700;
 		text-align: center;	
 		color: white;
@@ -22,7 +18,6 @@
 		color: white;
 		font-family: 'Lato', sans-serif;
 		text-align: center;
-		font-size: 1.5em;
 
 		a {
 			border-bottom: 1px dashed $lightGrayColor;
@@ -30,17 +25,64 @@
 			color: $baseColor;
 		}
 	}
+
+	@include respond-to('tiny') {
+		//for small screens
+		padding-top: 25px;
+		padding-bottom: 100px;
+
+		p {
+			font-size: 1.2em;
+		}
+
+		h1 {
+			font-size: 3.2em;
+		}
+	};
+
+	@include respond-to('small') {
+		//default
+		padding-top: 75px;
+		padding-bottom: 200px;
+
+		p {
+			font-size: 1.5em;
+		}
+
+		h1 {
+			font-size: 3.5em;
+		}
+
+	}
+
 }
 
 .info-wrapper {
 	position: absolute;
-	margin-top: -135px;
 	width: 100%;
+
+	@include respond-to('tiny') {
+		margin-top: -50px;
+	}
+	
+	@include respond-to('small') {
+		margin-top: -135px;
+	}
 
 	.info-card {
 		background-color: white;
 		border: 1px solid #d3d3d3;
-		margin-left: 25px;
+
+		@include respond-to('tiny') {
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom: 25px;
+			
+			padding-bottom: 10px;
+			
+			min-height: 200px;
+			width: 80%;
+		}
 
 		@include respond-to('small') {
 			padding-top: 30px;
@@ -87,20 +129,43 @@
 		@include box-shadow(1px, 1px, 5px, rgba(0,0,0,0.75))
 
 		img {
-			height: 100px;
-			width: 100px;
-			padding-bottom: 30px;
+			@include respond-to('tiny') {
+				// Spacing on top
+				margin-top: 10px; 
+
+				height: 50px;
+				width: 50px;
+			}
+
+			@include respond-to('small') {
+				margin-top: 0;
+
+				height: 100px;
+				width: 100px;
+				padding-bottom: 30px;
+			}
 		}
 		
 		h3 {
 			font-weight: 700;
 			font-family: 'Asap', sans-serif;
-			padding-bottom: 10px;
 
+			@include respond-to('tiny') {
+				font-size: 20px;
+			}
+
+			@include respond-to('small') {
+				padding-bottom: 10px;
+				font-size: 24px;
+			}
 		}
 
 		p {
 			font-family: 'Lato', sans-serif;
+
+			@include respond-to('tiny'){
+				font-size: 12px;
+			}
 
 			@include respond-to('small') {
 				font-size: 12px;

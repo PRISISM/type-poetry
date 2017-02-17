@@ -94,37 +94,63 @@ button.complement {
   background-color: #66624c; }
 
 /* Main section for home */
-.hero-home-heading {
-  padding-top: 75px;
-  padding-bottom: 200px; }
-  .hero-home-heading h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    margin-bottom: 20px; }
-  .hero-home-heading p {
-    color: white;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    font-size: 1.5em; }
-    .hero-home-heading p a {
-      border-bottom: 1px dashed #fbfbf9;
-      text-decoration: none;
-      color: #BEAD50; }
+.hero-home-heading h1 {
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 20px; }
+
+.hero-home-heading p {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  text-align: center; }
+  .hero-home-heading p a {
+    border-bottom: 1px dashed #fbfbf9;
+    text-decoration: none;
+    color: #BEAD50; }
+
+@media (min-width: 300px) {
+  .hero-home-heading {
+    padding-top: 25px;
+    padding-bottom: 100px; }
+    .hero-home-heading p {
+      font-size: 1.2em; }
+    .hero-home-heading h1 {
+      font-size: 3.2em; } }
+
+@media (min-width: 600px) {
+  .hero-home-heading {
+    padding-top: 75px;
+    padding-bottom: 200px; }
+    .hero-home-heading p {
+      font-size: 1.5em; }
+    .hero-home-heading h1 {
+      font-size: 3.5em; } }
 
 .info-wrapper {
   position: absolute;
-  margin-top: -135px;
   width: 100%; }
+  @media (min-width: 300px) {
+    .info-wrapper {
+      margin-top: -50px; } }
+  @media (min-width: 600px) {
+    .info-wrapper {
+      margin-top: -135px; } }
   .info-wrapper .info-card {
     background-color: white;
     border: 1px solid #d3d3d3;
-    margin-left: 25px;
     -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75); }
+    @media (min-width: 300px) {
+      .info-wrapper .info-card {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        min-height: 200px;
+        width: 80%; } }
     @media (min-width: 600px) {
       .info-wrapper .info-card {
         padding-top: 30px;
@@ -153,16 +179,32 @@ button.complement {
         margin-left: 25px;
         height: 370px;
         width: 300px; } }
-    .info-wrapper .info-card img {
-      height: 100px;
-      width: 100px;
-      padding-bottom: 30px; }
+    @media (min-width: 300px) {
+      .info-wrapper .info-card img {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px; } }
+    @media (min-width: 600px) {
+      .info-wrapper .info-card img {
+        margin-top: 0;
+        height: 100px;
+        width: 100px;
+        padding-bottom: 30px; } }
     .info-wrapper .info-card h3 {
       font-weight: 700;
-      font-family: 'Asap', sans-serif;
-      padding-bottom: 10px; }
+      font-family: 'Asap', sans-serif; }
+      @media (min-width: 300px) {
+        .info-wrapper .info-card h3 {
+          font-size: 20px; } }
+      @media (min-width: 600px) {
+        .info-wrapper .info-card h3 {
+          padding-bottom: 10px;
+          font-size: 24px; } }
     .info-wrapper .info-card p {
       font-family: 'Lato', sans-serif; }
+      @media (min-width: 300px) {
+        .info-wrapper .info-card p {
+          font-size: 12px; } }
       @media (min-width: 600px) {
         .info-wrapper .info-card p {
           font-size: 12px; } }
@@ -175,6 +217,9 @@ button.complement {
       @media (min-width: 1200px) {
         .info-wrapper .info-card p {
           font-size: 14px; } }
+
+.links-home {
+  min-height: 400px; }
 
 .hero-poem {
   height: 100%;
