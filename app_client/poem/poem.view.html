@@ -20,12 +20,14 @@
             <div class="row">
                 <div class="col-sm-4 transcript-wrapper text-center">
                     <h1>Transcript</h1>
-                    <p ng-repeat="typedLine in vm.typedPoem track by $index">
-                        {{typedLine}}
-						
-						<br ng-if="vm.poem.lines[$index] == false">
+                    <div class="transcript-text" data-simplebar>
+	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" data-simplebar>
+	                        {{typedLine}}
+							
+							<br ng-if="vm.poem.lines[$index] == false">
 
-                    </p>
+	                    </p> 	
+                    </div>
                 </div>
                 <div class="col-sm-8 input-wrapper text-center">
                     <!-- <h1 class="text-center">Input</h1> -->

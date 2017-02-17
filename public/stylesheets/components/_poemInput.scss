@@ -3,6 +3,7 @@ $heightOffet: 5px; // Accounts for difference in textarea?
 $height: 300px + 5px; //Amount to move up the DISABLED textarea to match the other's size
 
 .input-wrapper {
+	min-height: 300px; // To not break styling when no text
 	padding-top: 60px;
 	padding-left: 50px;
 	padding-right: 50px;

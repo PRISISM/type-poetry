@@ -154,6 +154,7 @@ nav.navbar {
       color: #BEAD50; }
 
 .input-wrapper {
+  min-height: 300px;
   padding-top: 60px;
   padding-left: 50px;
   padding-right: 50px;
@@ -190,8 +191,12 @@ textarea.poem-text {
     font-family: 'Lora', serif;
     font-weight: 700;
     font-style: italic;
+    border-bottom: 1px dotted #BEAD50;
+    padding-bottom: 10px;
     margin-bottom: 20px; }
   .transcript-wrapper p {
     word-wrap: break-word;
     font-size: 16px;
     font-family: 'Lora', serif; }
+  .transcript-wrapper div.transcript-text {
+    height: 500px; }

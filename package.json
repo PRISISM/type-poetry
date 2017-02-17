@@ -44,6 +44,7 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "nodemon": "^1.11.0",
+    "simplebar": "^2.0.3",
     "superagent": "^3.4.1",
     "wiredep": "^4.0.0",
     "yargs": "^6.6.0"
