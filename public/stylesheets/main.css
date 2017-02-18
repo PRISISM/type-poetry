@@ -275,6 +275,9 @@ button.complement {
         .info-wrapper .info-card p {
           font-size: 14px; } }
 
+.poem-label {
+  float: right; }
+
 .links-home {
   min-height: 400px; }
 

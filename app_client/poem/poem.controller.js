@@ -22,9 +22,9 @@
 			vm.poem = result.data[0];
 			var trimmedLines = vm.poem.lines.map(function(s) {
 				return s
-				.trim()
-				.replace('—', '--')
-				.replace('’', "'");
+					.trim()
+					.replace('—', '--')
+					.replace('’', "'");
 			});
 			vm.poem.lines = trimmedLines;
 			vm.typedPoem = Array(vm.poem.lines.length);
@@ -62,8 +62,11 @@
 		};
 
 		vm.randomPoem = function() {
+			vm.showSpinner = true;
+
 			var randomPromise = poemApi.getRandomPoem();
 			randomPromise.then(function(result) {
+				vm.showSpinner = false;
 				$location.path('/poem/' + result);
 			});
 		};

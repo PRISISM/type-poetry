@@ -8,9 +8,13 @@
 	function authorsCtrl($http, poemApi) {
 		var vm = this;
 
+		vm.showSpinner = true;
+
 		var authorsPromise = poemApi.getAuthors();
 		authorsPromise.then(function(result) {
-			console.log(result);
+			vm.showSpinner = false;
+			vm.showControls = true;
+			
 			vm.authors = result.data.authors;
 		});
 

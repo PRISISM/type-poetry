@@ -2,18 +2,21 @@
 	<h1 class="list-header">Authors</h1>
 	<input ng-model="vm.q" id="search" class="form-control" placeholder="Search for an author here!">
 	<hr>
-	
+
+	<span us-spinner="{radius:30, width:8, length: 16}" spinner-on="vm.showSpinner"></span>
+
 	<div class="list-group">
 		<div class="paginate-group" dir-paginate="author in vm.authors|filter:vm.q|itemsPerPage:15">
 			<a class="list-group-item" ng-bind="author" ng-href="/author/{{author}}"></a>
 		</div>
 	</div>
 
-	<div class="pagination-controls-wrapper">
+	<div class="pagination-controls-wrapper" ng-show="vm.showControls">
 		<dir-pagination-controls
 			max-size="20" 
 			direction-links="true" 
-			boundary-links="true">
+			boundary-links="true" 
+			ng-show="vm.showControls">
 		
 		</dir-pagination-controls>
 	</div>
