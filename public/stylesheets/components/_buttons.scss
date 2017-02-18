@@ -1,3 +1,5 @@
+/*  Flat button styling */
+
 .flat-button {
 	display: inline-block;
 	cursor: pointer;
@@ -40,4 +42,14 @@ button.complement {
 	background-color: $complementColor;
 	color: white;
 	@include poem-button-shadow($complementColor);
+}
+
+/* Circle button styling */
+.circle-button {
+	width: 30px;
+	height: 30px;
+
+	text-align: center;
+	padding: 6px 0;
+	border-radius: 15px;
 }

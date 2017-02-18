@@ -86,12 +86,14 @@ router.get('/authors/:author', function(req, res) {
 
 });
 
-/* Route that takes a search query and returns a list of titles with their linecount */
+/* Route that takes a search query and returns a list of titles with their linecount and author */
 router.get('/search/:title', function(req, res) {
 	var options = {
 		method: 'get',
-		uri: 'http://poetrydb.org/title/' + encodeURIComponent(req.params.author) + '/title,linecount'
+		uri: 'http://poetrydb.org/title/' + encodeURIComponent(req.params.title) + '/title,author,linecount'
 	};
+
+	console.log(options.uri);
 
 	request(options, function(err, response, body) {
 		if (err) {

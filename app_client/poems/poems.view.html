@@ -1,19 +1,24 @@
 <div class="container">
-	<h1>Poems</h1>
-
-	<label for="search">Search:</label>
-	<input ng-model="vm.q" id="search" class="form-control" placeholder="Filter text">
+	<h1 class="list-header">Poems</h1>
+	<input ng-model="vm.q" id="search" class="form-control" placeholder="Search for a poem here!">
 	<hr>
+	
+	<div class="list-group">
+		<div dir-paginate="title in vm.titles|filter:vm.q|itemsPerPage:20">
+			<a class="list-group-item" ng-bind="title" ng-href="/poem/{{title}}">
+				<span class="badge" ng-bind="title.linecount"></span>
 
-	<div dir-paginate="title in vm.titles|filter:vm.q|itemsPerPage:50">
-		<a ng-bind="title" ng-href="/poem/{{title}}"></a>
+			</a>
+		</div>
 	</div>
 
-	<dir-pagination-controls
-		max-size="10" 
-		direction-links="true" 
-		boundary-links="true">
-
-	</dir-pagination-controls>
+	<div class="pagination-controls-wrapper">
+		<dir-pagination-controls
+			max-size="20" 
+			direction-links="true" 
+			boundary-links="true">
+		
+		</dir-pagination-controls>
+	</div>
 
 </div>
