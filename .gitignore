@@ -3,3 +3,4 @@
 *.log
 .gitold
 /bower_components
+/build

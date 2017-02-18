@@ -1,0 +1,23 @@
+doctype html
+html(ng-app="myApp" ng-strict-di)
+  head
+    title(ng-bind="title") Typoetry
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    base(href='/')
+    meta(charset='utf-8')
+
+    link(rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon")
+
+    <link rel="stylesheet" href="styles/lib.css">
+
+    <link rel="stylesheet" href="styles/app.css">
+
+  body
+    include _nav.pug
+
+    div(ng-view)
+        block content
+
+  <script src="js/lib.js"></script>
+  
+  <script src="js/app.js"></script>

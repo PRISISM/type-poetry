@@ -2,7 +2,7 @@
 	font-family: 'Asap';
 	font-style: normal;
 	font-weight: 400;
-	src: url(Asap-normal-400.woff) format('woff');
+	src: url(fonts/Asap-normal-400.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -10,7 +10,7 @@
 	font-family: 'Asap';
 	font-style: normal;
 	font-weight: 700;
-	src: url(Asap-normal-700.woff) format('woff');
+	src: url(fonts/Asap-normal-700.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -18,7 +18,7 @@
 	font-family: 'Caveat Brush';
 	font-style: normal;
 	font-weight: 400;
-	src: url(Caveat_Brush-normal-400.woff) format('woff');
+	src: url(fonts/Caveat_Brush-normal-400.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -26,7 +26,7 @@
 	font-family: 'Lato';
 	font-style: normal;
 	font-weight: 400;
-	src: url(Lato-normal-400.woff) format('woff');
+	src: url(fonts/Lato-normal-400.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -34,7 +34,7 @@
 	font-family: 'Lora';
 	font-style: normal;
 	font-weight: 400;
-	src: url(Lora-normal-400.woff) format('woff');
+	src: url(fonts/Lora-normal-400.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -42,7 +42,7 @@
 	font-family: 'Lora';
 	font-style: normal;
 	font-weight: 700;
-	src: url(Lora-normal-700.woff) format('woff');
+	src: url(fonts/Lora-normal-700.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -50,7 +50,7 @@
 	font-family: 'Lora';
 	font-style: italic;
 	font-weight: 400;
-	src: url(Lora-italic-400.woff) format('woff');
+	src: url(fonts/Lora-italic-400.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -58,7 +58,7 @@
 	font-family: 'Lora';
 	font-style: italic;
 	font-weight: 700;
-	src: url(Lora-italic-700.woff) format('woff');
+	src: url(fonts/Lora-italic-700.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 
@@ -66,7 +66,7 @@
 	font-family: 'Roboto Slab';
 	font-style: normal;
 	font-weight: 700;
-	src: url(Roboto_Slab-normal-700.woff) format('woff');
+	src: url(fonts/Roboto_Slab-normal-700.woff) format('woff');
 	unicode-range: U+0-10FFFF;
 }
 

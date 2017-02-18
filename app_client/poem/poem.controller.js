@@ -8,7 +8,7 @@
 	function poemCtrl($http, $routeParams, $window, poemApi) {
 		var vm = this;
 		var title = $routeParams.title;
-		vm.done = true; // When user is finished writing
+		vm.done = false; // When user is finished writing
 
 		$window.document.title = title;
 

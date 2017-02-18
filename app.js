@@ -34,6 +34,7 @@ switch (environment) {
   case 'build':
     console.log('--BUILD--');
     app.use(express.static('./build/'));
+    app.use('/public/svg', express.static('./build/svg'));
     app.set('views', path.join(__dirname, 'build'));
     break;
   default:

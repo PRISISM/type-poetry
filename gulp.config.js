@@ -18,10 +18,11 @@ module.exports = function() {
 		],
 		css: [
 			'./public/stylesheets/*.css',
-			'./public/fonts/*.css'
+			'./public/fonts/**/*.css'
 		],
 		scss: ['./public/stylesheets/**/*.scss'
 		],
+		svg: ['./public/svg/**/*.svg'],
 		htmltemplates: './app_client/**/*.view.html',
 		injectOptions: {
 			// ignorePath: ['app_client', 'public']
@@ -49,7 +50,7 @@ module.exports = function() {
 
 		/* Font Options for Google Webfonts */
 		fontOptions: {
-			fontsDir: '',
+			fontsDir: '../fonts/',
 			cssDir: '',
 			cssFilename: 'fonts.css'
 		},

@@ -66,12 +66,19 @@ gulp.task('styles:watch', function() {
 	gulp.watch(config.scss, ['styles']);
 });
 
+gulp.task('svg-min', function() {
+	return gulp
+		.src(config.svg)
+		.pipe($.svgmin())
+		.pipe(gulp.dest(config.build + '/svg'));
+})
+
 /* Loads Google Fonts from a list and outputs to a folder */
-gulp.task('fonts', function() {
+gulp.task('fonts', ['clean-fonts'], function() {
 	return gulp
 		.src('./fonts.list')
 		.pipe($.googleWebfonts(config.fontOptions))
-		.pipe((gulp.dest('./public/fonts')));
+		.pipe((gulp.dest('./public/stylesheets')));
 });
 
 /* Starts a development server using nodemon */
@@ -92,6 +99,11 @@ gulp.task('templatecache', ['clean-code'], function() {
 		.pipe(gulp.dest(config.temp));
 });
 
+gulp.task('clean-fonts', function() {
+	log('Cleaning Fonts');
+	return clean(['./public/fonts/**/*', './build/fonts/*']);
+})
+
 gulp.task('clean-code', function() {
 	log('Cleaning Code');
 	var files = [].concat(
@@ -103,10 +115,15 @@ gulp.task('clean-code', function() {
 });
 
 /* Gulp task to produce an optimize production build in the ./build folder */
-gulp.task('optimize', ['inject'], function() {
+gulp.task('optimize', ['inject', 'svg-min'], function() {
 	// var assets = $.useref.assets({searchPath:'./'})
 	var cssFilter = $.filter('**/*.css', {restore: true});
 	var jsFilter = $.filter('**/*.js', {restore: true});
+
+	log('Copying fonts to build folder...');
+	gulp
+		.src('./public/fonts/*')
+		.pipe(gulp.dest(config.build + '/fonts'));
 
 	log('Optimizing the javascript, css and html');
 
