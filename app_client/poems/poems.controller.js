@@ -17,7 +17,6 @@
 		poemPromise.then(function(result) {
 			vm.showSpinner = false;
 			vm.showControls = true;
-			console.log(result);
 			vm.titles = result.data.titles;
 		});
 

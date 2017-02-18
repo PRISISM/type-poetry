@@ -12,13 +12,14 @@
 
 		$window.document.title = title;
 
+		vm.showSpinner = true;
 		var poemPromise = poemApi.getSinglePoem(title);
 
 		poemPromise.then(function(result) {
 			if (result.data.status) { // If there is a 404 Error 
 				$window.location.href = '/poems';
 			}
-			console.log(result);
+			vm.showSpinner = false;
 			vm.poem = result.data[0];
 			var trimmedLines = vm.poem.lines.map(function(s) {
 				return s

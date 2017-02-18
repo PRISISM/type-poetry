@@ -12,9 +12,6 @@
 
 		var authorPromise = poemApi.getAuthorTitles(vm.name);
 		authorPromise.then(function(result) {
-			
-
-			console.log(result);
 			vm.poems = result.data;
 		});
 

@@ -64,13 +64,11 @@
 		// Set title based on view
 		.run(['$rootScope', '$routeParams', function($rootScope, $routeParams) {
 			$rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
-				console.log($routeParams);
 				if ($routeParams && $routeParams.title) { // If a title is passed
 					$rootScope.title = $routeParams.title;
 				} else if ($routeParams && $routeParams.name) { // If an author name is passed
 					$rootScope.title = 'Poems by ' + $routeParams.name;
 				} else {
-					console.log(current.$$route.title);
 					$rootScope.title = current.$$route.title;
 
 				}
