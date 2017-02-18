@@ -20,7 +20,6 @@
 	height: 200px;
 	width: 200px;
 
-
 }	
 button.base {
 	border-color: $baseColor;
@@ -44,6 +43,14 @@ button.complement {
 	@include poem-button-shadow($complementColor);
 }
 
+.flat-wrapper.ng-hide {
+	opacity: 0 !important;
+}
+
+.flat-wrapper.ng-hide-add, .flat-wrapper.ng-hide-remove {
+	transition: all linear 0.5s;
+}
+
 /* Circle button styling */
 .circle-button {
 	width: 30px;
@@ -53,3 +60,4 @@ button.complement {
 	padding: 6px 0;
 	border-radius: 15px;
 }
+

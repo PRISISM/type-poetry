@@ -3,9 +3,9 @@
 		.module('myApp')
 		.controller('poemCtrl', poemCtrl);
 
-	poemCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi'];
+	poemCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi', '$route', '$location'];
 
-	function poemCtrl($http, $routeParams, $window, poemApi) {
+	function poemCtrl($http, $routeParams, $window, poemApi, $route, $location) {
 		var vm = this;
 		var title = $routeParams.title;
 		vm.done = false; // When user is finished writing
@@ -46,14 +46,6 @@
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
 				vm.poemIndex++;
 				vm.done = true;
-				swal({
-					title: 'You have reached the end!',
-					text: 'You have finished retyping this poem, ',
-					type: 'success',
-					allowEscapeKey: false,
-					allowOutsideClick: false,
-
-				});
 				console.log('reached end');
 			} else {
 				vm.poemIndex++;
@@ -63,6 +55,17 @@
 					/* Instead, call caesura thing here (show pause)*/
 				}
 			}
+		};
+
+		vm.reloadRoute = function() {
+			$route.reload();
+		};
+
+		vm.randomPoem = function() {
+			var randomPromise = poemApi.getRandomPoem();
+			randomPromise.then(function(result) {
+				$location.path('/poem/' + result);
+			});
 		};
 
 	}

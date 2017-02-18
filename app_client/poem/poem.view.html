@@ -53,10 +53,10 @@
                 </div>
                 <div class="col-sm-8 input-wrapper text-center">
                     <!-- <h1 class="text-center">Input</h1> -->
-					<div ng-show="vm.done" ng-cloak>
+					<div class="flat-wrapper" ng-show="vm.done" >
 						<div class="row row-centered">
-							<button class="flat-button base">Repeat this poem!</button>
-							<button class="flat-button accent">Random a new poem!</button>
+							<button class="flat-button base" ng-click="vm.reloadRoute()">Repeat this poem!</button>
+							<button class="flat-button accent" ng-click="vm.randomPoem()">Random a new poem!</button>
 							<button class="flat-button complement">Share this poem!</button>
 						</div>
 					</div>
@@ -69,6 +69,7 @@
                         </div>
                     </div>
                     <button ng-click="vm.next()"> Next </button>
+                    <button ng-click="vm.done= !vm.done">Done</button>
                 </div>
             </div>
         </div>

@@ -19,6 +19,17 @@ function poemApi($http, $location) {
 			});
 	};
 
+	/* Get a random title from the list of all poems
+	   Returns the title to be used as a link
+	 */
+	var getRandomPoem = function() {
+		return $http.get( $location.protocol() + '://' + location.host + '/api/titles')
+		.then(function(result) {
+			var titles = result.data.titles;
+			return titles[Math.floor(Math.random() * titles.length)];
+		});
+	};
+
 	/* Get a single poem from the API
 	   Returns the full response object with status code and data
 	*/
@@ -49,8 +60,10 @@ function poemApi($http, $location) {
 			});
 	};
 
+
 	return {
 		getPoems: getPoems,
+		getRandomPoem: getRandomPoem,
 		getSinglePoem: getSinglePoem,
 		getAuthors: getAuthors,
 		getAuthorTitles: getAuthorTitles

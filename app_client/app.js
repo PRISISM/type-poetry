@@ -1,5 +1,5 @@
 (function() {
-	angular.module('myApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'focus-if', 'ngAnimate']);
+	angular.module('myApp', ['ngRoute', 'ngAnimate', 'angularUtils.directives.dirPagination', 'focus-if']);
 
 	// Module configuration
 	function config($routeProvider, $locationProvider, $routeParams) {

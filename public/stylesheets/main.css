@@ -1,3 +1,30 @@
+/* from animate.css */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
 /* Box Shadow 1 */
 /* Responsive Breakpoint Manager */
 /* Box Shadow for Poem Buttons */
@@ -104,6 +131,12 @@ button.complement {
   -webkit-box-shadow: 0px 6px 0px #3c2e60;
   -moz-box-shadow: 0px 6px 0px #3c2e60;
   box-shadow: 0px 6px 0px #3c2e60; }
+
+.flat-wrapper.ng-hide {
+  opacity: 0 !important; }
+
+.flat-wrapper.ng-hide-add, .flat-wrapper.ng-hide-remove {
+  transition: all linear 0.5s; }
 
 /* Circle button styling */
 .circle-button {
