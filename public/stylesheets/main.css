@@ -70,6 +70,15 @@ a {
 .main {
   height: 100%; }
 
+.home-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: #606060;
+  margin-bottom: 10px; }
+
 .navbar-brand {
   position: absolute;
   width: 100%;
@@ -319,14 +328,13 @@ button.complement {
 
 /* Placeholder Input */
 .type {
-  color: red;
   bottom: 305px; }
 
 /* User Input */
 .typed {
   z-index: 10;
   background: none;
-  padding-top: 4px; }
+  vertical-align: top; }
 
 textarea.poem-text {
   resize: none;

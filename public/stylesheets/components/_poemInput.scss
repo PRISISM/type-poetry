@@ -1,4 +1,4 @@
-$typecolor: red;
+// $typecolor: red;
 $heightOffet: 5px; // Accounts for difference in textarea?
 $height: 300px + 5px; //Amount to move up the DISABLED textarea to match the other's size
 
@@ -12,7 +12,7 @@ $height: 300px + 5px; //Amount to move up the DISABLED textarea to match the oth
 }
 /* Placeholder Input */
 .type {
-	color: $typecolor;
+	// color: $typecolor;
 	bottom: $height; 
 }
 
@@ -20,7 +20,8 @@ $height: 300px + 5px; //Amount to move up the DISABLED textarea to match the oth
 .typed {
 	z-index:10;
 	background:none;
-	padding-top: 4px; // Move down
+	vertical-align: top;
+	// padding-top: 4px; // Move down
 }
 
 textarea.poem-text {
