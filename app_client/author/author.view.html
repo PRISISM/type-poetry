@@ -1,19 +1,30 @@
 <div class="container">
-	<h1 ng-bind="vm.name"></h1>
-
-	<label for="search">Search:</label>
-	<input ng-model="vm.q" id="search" class="form-control" placeholder="Filter text">
+	<h1 class="list-header" ng-bind="vm.name"></h1>
+	<p class="small ">All poems by {{vm.name}}. Note that the line count includes line breaks.</p>
+	<input ng-model="vm.q" id="search" class="form-control" placeholder="Search for a poem here!">
 	<hr>
-
-	<div dir-paginate="poem in vm.poems|filter:vm.q|itemsPerPage:10">
-		<a ng-bind="poem.title" ng-href="/poem/{{poem.title}}"></a> 
+	
+	<div class="list-group">
+		<div class="paginate-group" dir-paginate="poem in vm.poems|filter:vm.q|itemsPerPage:15">
+			<div class="row">
+				<div class="col-xs-12">
+					<a class="list-group-item clearfix" ng-href="/poem/{{poem.title}}">
+						{{poem.title}}	
+						<span class="label label-info">{{poem.linecount}} lines</span>
+	
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<dir-pagination-controls
-		max-size="10" 
-		direction-links="true" 
-		boundary-links="true">
-
-	</dir-pagination-controls>
+	<div class="pagination-controls-wrapper">
+		<dir-pagination-controls
+			max-size="20" 
+			direction-links="true" 
+			boundary-links="true">
+		
+		</dir-pagination-controls>
+	</div>
 
 </div>

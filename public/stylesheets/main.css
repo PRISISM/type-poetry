@@ -20,6 +20,15 @@ a {
 
 .paginate-group a {
   font-family: 'Lato', sans-serif; }
+  @media (min-width: 300px) {
+    .paginate-group a {
+      font-size: 12px; } }
+  @media (min-width: 600px) {
+    .paginate-group a {
+      font-size: 14px; } }
+
+.small {
+  color: #606060; }
 
 /* Centered Column Styles */
 .row-centered {
@@ -171,8 +180,8 @@ button.complement {
         padding-top: 30px;
         margin-right: 7.5px;
         margin-left: 7.5px;
-        height: 340px;
-        width: 180px; } }
+        height: 360px;
+        width: 175px; } }
     @media (min-width: 750px) {
       .info-wrapper .info-card {
         padding-top: 30px;
@@ -314,3 +323,6 @@ textarea.poem-text {
     color: #606060; }
   .transcript-wrapper div.transcript-text {
     height: 400px; }
+
+#search {
+  margin-top: 5px; }
