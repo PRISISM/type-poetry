@@ -1,6 +1,6 @@
 module.exports = function() {
 	var views = './app_server/views/';
-	var server = ['./app_server/', './app.js'];
+	var server = ['./app_server/**/*.js', 'app.js'];
 
 	var config = {
 		// All JS used to vet

@@ -176,8 +176,6 @@ function log(msg) {
 }
 
 function serve(isDev) {
-		var isDev = isDev;
-
 	var nodeOptions = {
 		script: config.nodeServer,
 		delayTime: 1,
@@ -188,7 +186,7 @@ function serve(isDev) {
 		watch: config.server
 	};
 	return $.nodemon(nodeOptions)
-		.on('restart', ['vet'], function(ev) {
+		.on('restart', function(ev) {
 			log('Nodemon restarted');
 			log('Files changed on restart:\n' + ev);
 		})

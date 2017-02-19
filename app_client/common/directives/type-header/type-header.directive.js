@@ -9,7 +9,7 @@
             restrict: 'A',
             link: function(scope, element, attrs) {
                 $(element).typeIt({
-                    strings: 'TYPOETRY',
+                    strings: 'TYPE POETRY',
                     loop: true,
                     loopDelay: 4000
                 });

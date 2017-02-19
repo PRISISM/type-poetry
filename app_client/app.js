@@ -23,39 +23,45 @@
 				title: 'Poems'
 			})
 
-		.when('/poem/:title', {
-			controller: 'poemCtrl',
-			controllerAs: 'vm',
-			templateUrl: 'app_client/poem/poem.view.html'
-		})
+			.when('/poem/random/:title', {
+				controller: 'randomCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/random/random.view.html'
+			})
 
-		.when('/authors', {
-			controller: 'authorsCtrl',
-			controllerAs: 'vm',
-			templateUrl: 'app_client/authors/authors.view.html',
-			title: 'Authors'
-		})
+			.when('/poem/:title', {
+				controller: 'poemCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/poem/poem.view.html'
+			})
 
-		.when('/author/:name', {
-			controller: 'authorCtrl',
-			controllerAs: 'vm',
-			templateUrl: 'app_client/author/author.view.html'
-		})
+			.when('/authors', {
+				controller: 'authorsCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/authors/authors.view.html',
+				title: 'Authors'
+			})
 
-		.when('/404', {
-			controller: 'errorCtrl',
-			controllerAs: 'vm',
-			templateUrl: 'app_client/error/404.view.html',
-			title: 'Error!'
-		})
+			.when('/author/:name', {
+				controller: 'authorCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/author/author.view.html'
+			})
 
-		.otherwise({
-			redirectTo: '/'
-		});
+			.when('/404', {
+				controller: 'errorCtrl',
+				controllerAs: 'vm',
+				templateUrl: 'app_client/error/404.view.html',
+				title: 'Error!'
+			})
 
-		$locationProvider.html5Mode(true);
+			.otherwise({
+				redirectTo: '/'
+			});
 
-		// $httpProvider.interceptors.push('myInterceptor');
+			$locationProvider.html5Mode(true);
+
+			// $httpProvider.interceptors.push('myInterceptor');
 	}
 
 	angular

@@ -60,13 +60,31 @@ function poemApi($http, $location) {
 			});
 	};
 
+	/* Get a list of lines from the API. 
+	   Once a random poem is generated, it is stored in the database.
+	*/
+	var makeRandomPoemUrl = function(num) {
+		return $http.get( $location.protocol() + '://' + location.host + '/api/makerand/' + num)
+			.then(function(result) {
+				return result;
+			});
+	};
+
+	var getRandomPoemUrl = function(title) {
+		return $http.get( $location.protocol() + '://' + location.host + '/api/getrand/' + title)
+			.then(function(result) {
+				return result;
+			});
+	};
 
 	return {
 		getPoems: getPoems,
 		getRandomPoem: getRandomPoem,
 		getSinglePoem: getSinglePoem,
 		getAuthors: getAuthors,
-		getAuthorTitles: getAuthorTitles
+		getAuthorTitles: getAuthorTitles,
+		makeRandomPoemUrl: makeRandomPoemUrl,
+		getRandomPoemUrl: getRandomPoemUrl
 	};
 
 }

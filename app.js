@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var index = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
@@ -16,6 +17,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
+mongoose.connect('mongodb://localhost:27017/typoetry');
+
+// On successful connection
+mongoose.connection.on('connected', function () {  
+  console.log('Mongoose default connection open to database');
+}); 
+
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {  
+  console.log('Mongoose default connection error: ' + err);
+}); 
+
+require('./app_api/models/poem');
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -24,11 +39,6 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-// app.use(require('node-sass-middleware')({
-//   src: path.join(__dirname),
-//   dest: path.join(__dirname),
-//   debug: true
-// }));
 
 switch (environment) {
   case 'build':
@@ -44,10 +54,6 @@ switch (environment) {
     app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
     break;
 }
-
-// app.use('/public', express.static(path.join(__dirname, 'public')));
-// app.use('/app_client', express.static(path.join(__dirname, 'app_client')));
-// app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 
 app.use('/', index);
 app.use('/users', users);
