@@ -51,7 +51,9 @@
     <!-- Footer -->
     <footer class="home-footer">
         Icons designed by Freepik from Flaticon
-        <button ng-click="vm.randPoem(5)">Random Poem</button>
+        <input type="number" name="num" ng-model="vm.num" min="1" max="99">
+        <span>{{vm.num}}</span>
+        <button ng-click="vm.randPoem(vm.num)">Random Poem</button>
 
     </footer>
 
