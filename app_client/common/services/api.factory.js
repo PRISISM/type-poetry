@@ -67,6 +67,7 @@ function poemApi($http, $location) {
 		return $http.get( $location.protocol() + '://' + location.host + '/api/makerand/' + num)
 			.then(function(result) {
 				return result;
+				/* Then redirect to poem page */
 			});
 	};
 

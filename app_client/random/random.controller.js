@@ -75,7 +75,9 @@
 			$route.reload();
 		};
 
+		/* Generates a new random poem */
 		vm.randomPoem = function() {
+
 			vm.showSpinner = true;
 
 			var randomPromise = poemApi.getRandomPoem();

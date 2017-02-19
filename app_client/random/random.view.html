@@ -44,7 +44,7 @@
                     <h1>Transcript</h1>
                     <div class="transcript-text" data-simplebar>
 	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" data-simplebar>
-	                        {{typedLine}}
+	                        <span title="From '{{vm.poem[$index].title}}'' by {{vm.poem[$index].author}}">{{typedLine}}</span>
 							
 							<br ng-if="vm.poem.lines[$index] == false">
 
@@ -60,7 +60,7 @@
 					<div class="flat-wrapper" ng-show="vm.done && !vm.showSpinner">
 						<div class="row row-centered">
 							<button class="flat-button base" ng-click="vm.reloadRoute()">Repeat this poem!</button>
-							<button class="flat-button accent" ng-click="vm.randomPoem()">Random a new poem!</button>
+							<button class="flat-button accent" ng-click="vm.randomPoem()">Generate a new poem!</button>
 							<button class="flat-button complement">Share this poem!</button>
 						</div>
 					</div>

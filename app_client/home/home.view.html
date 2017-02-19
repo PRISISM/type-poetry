@@ -12,6 +12,8 @@
             </div>
         </div>
     </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-on="vm.showSpinner"></span>
+
     <!-- Cards -->
     <div class="container info-wrapper">
         <div class="row row-centered">
@@ -41,7 +43,6 @@
     <div class="links-home">
         <div class="container">
             <div class="row">
-                
 
             </div>
         </div>
@@ -50,6 +51,8 @@
     <!-- Footer -->
     <footer class="home-footer">
         Icons designed by Freepik from Flaticon
+        <button ng-click="vm.randPoem(5)">Random Poem</button>
+
     </footer>
 
 </div>
