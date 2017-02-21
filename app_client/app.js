@@ -4,8 +4,9 @@
 		'angularUtils.directives.dirPagination',
 		'focus-if',
 		'angularSpinner',
-		'720kb.socialshare'
-	]);
+		'720kb.socialshare',
+		'ngAudio'
+		]);
 
 	// Module configuration
 	function config($routeProvider, $locationProvider, $routeParams) {

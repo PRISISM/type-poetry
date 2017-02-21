@@ -25,6 +25,7 @@
     "sweetalert2": "^6.4.1",
     "angular-resizable": "^1.2.0",
     "angular-spinner": "^1.0.1",
-    "angular-socialshare": "angularjs-socialshare#^2.3.7"
+    "angular-socialshare": "angularjs-socialshare#^2.3.7",
+    "angular-audio": "^1.7.3"
   }
 }

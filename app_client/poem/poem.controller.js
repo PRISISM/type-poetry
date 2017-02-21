@@ -3,9 +3,9 @@
 		.module('myApp')
 		.controller('poemCtrl', poemCtrl);
 
-	poemCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi', '$route', '$location'];
+	poemCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi', '$route', '$location', '$document'];
 
-	function poemCtrl($http, $routeParams, $window, poemApi, $route, $location) {
+	function poemCtrl($http, $routeParams, $window, poemApi, $route, $location, $document) {
 		var vm = this;
 		var title = $routeParams.title;
 		vm.done = false; // When user is finished writing
@@ -31,6 +31,9 @@
 			vm.typedPoem = Array(vm.poem.lines.length);
 			vm.poemIndex = 0;
 		});
+
+		vm.rain = new Audio('public/audio/rain.mp3');
+		// vm.rain = ngAudio.load('public/audio/rain.mp3');
 
 		/* Compares the current string to the respective line in the poem array */
 		vm.check = function(typed, index) {
@@ -71,6 +74,19 @@
 				$location.path('/poem/' + result);
 			});
 		};
+
+		vm.play = function(name) {
+			var audio = document.getElementById(name);
+			console.log(audio);
+			if (audio.paused) {
+				console.log('Playing', name);
+				audio.play();
+			}
+			else {
+				audio.pause();
+			}
+		};
+
 
 	}
 })();

@@ -72,6 +72,9 @@ a {
 .social-wrapper {
   padding-bottom: 10px; }
 
+.audio-wrapper {
+  padding-bottom: 10px; }
+
 .home-footer {
   width: 100%;
   font-family: 'Lato', sans-serif;
@@ -161,7 +164,9 @@ button.complement {
   .btn-responsive {
     padding: 4px 9px;
     font-size: 90%;
-    line-height: 1.2; } }
+    line-height: 1.2;
+    font-family: 'Lato', Helvetica, sans-serif;
+    border-color: #d3d3d3; } }
 
 .hero-home {
   height: 100%;

@@ -17,7 +17,34 @@
 
             <div class="row">
             	<div class="col-sm-6">
-            		
+            		<div class="audio-wrapper pull-left">
+            			<div class="btn-group" role="group">
+            				<button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Rain" data-placement="bottom" tooltip ng-click="vm.play('rain')">
+            					<i class="fa fa-umbrella" aria-hidden="true"></i>
+							</button>
+
+							<audio id="rain" loop="true">
+								<source src="public/audio/rain.mp3" type="audio/mpeg">
+							</audio>
+
+            				<button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Coffee" data-placement="bottom" tooltip ng-click="vm.play('coffee')"> 
+            					<i class="fa fa-coffee" aria-hidden="true"></i>
+							</button>
+
+							<audio id="coffee" loop="true">
+								<source src="public/audio/coffee.mp3" type="audio/mpeg">
+							</audio>
+
+            				<button class="btn btn-default btn-responsive" data-toggle="tooltip" title="College" data-placement="bottom" tooltip ng-click="vm.play('college')">
+            					<i class="fa fa-book" aria-hidden="true"></i>
+							</button>
+
+							<audio id="college" loop="true">
+								<source src="public/audio/library.mp3" type="audio/mpeg">
+							</audio>
+            			</div>
+
+            		</div>
 
             	</div>
             	<div class="col-sm-6">
@@ -25,19 +52,19 @@
 	            		<button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="twitter" socialshare-text="Retype {{title}} on Type Poetry!"
 	            		socialshare-url="{{$location.absUrl()}}">
 		            		<i class="fa fa-twitter" aria-hidden="true"></i>
-	            			Share
+	            			 Share
 	            		</button>
 
 	            		<button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="facebook" socialshare-text="Retype {{title}} on Type Poetry!"
 	            		socialshare-url="{{$location.absUrl()}}">
 		            		<i class="fa fa-facebook" aria-hidden="true"></i>
-	            			Share
+	            			 Share
 	            		</button>
 
 	            		<button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="tumblr" socialshare-text="Retype {{title}} on Type Poetry!"
 	            		socialshare-url="{{$location.absUrl()}}">
 		            		<i class="fa fa-tumblr" aria-hidden="true"></i>
-	            			Share
+	            			 Share
 	            		</button>
             		</div>    
 
@@ -53,8 +80,8 @@
             <div class="row">
                 <div class="col-sm-4 transcript-wrapper text-center">
                     <h1>Transcript</h1>
-                    <div class="transcript-text" data-simplebar>
-	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" data-simplebar>
+                    <div class="transcript-text" id="transcript" data-simplebar>
+	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" data-simplebar style="height:20px;">
 	                        {{typedLine}}
 							
 							<br ng-if="vm.poem.lines[$index] == false">
