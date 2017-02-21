@@ -38,23 +38,34 @@
                     English learners and typists-in-training are welcome to test their skills here too! </p>
             </div>
         </div>
-    </div>
-    <!-- Links Section -->
-    <div class="links-home">
-        <div class="container">
-            <div class="row">
-
+        
+        <!-- Random Section -->
+        <div class="row row-centered hero-random">
+            <div class="col-xs-12 col-centered">
+                <h1>Create a random poem!</h1>
+                <p>Specify the number of lines you want and we'll generate a unique text from poems with those amount of lines.</p>
+                
+                <div class="col-sm-4 col-sm-offset-4 random-input-wrapper">
+                    <div class="input-group">
+                        <span class="input-group-addon">Lines: </span>
+                        <input class="form-control" type="number" name="num" ng-model="vm.num" min="1" max="99">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" ng-click="vm.randPoem(vm.num)">Make!</button>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="home-footer">
+            Icons designed by Freepik from Flaticon.
+
+        </footer>
+
+
     </div>
 
-    <!-- Footer -->
-    <footer class="home-footer">
-        Icons designed by Freepik from Flaticon
-        <input type="number" name="num" ng-model="vm.num" min="1" max="99">
-        <span>{{vm.num}}</span>
-        <button ng-click="vm.randPoem(vm.num)">Random Poem</button>
 
-    </footer>
 
 </div>

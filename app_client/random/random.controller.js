@@ -75,15 +75,15 @@
 			$route.reload();
 		};
 
-		/* Generates a new random poem */
+		/* Generates a new random poem with the same number of lines */
 		vm.randomPoem = function() {
 
 			vm.showSpinner = true;
 
-			var randomPromise = poemApi.getRandomPoem();
+			var randomPromise = poemApi.makeRandomPoemUrl(vm.poem.length);
 			randomPromise.then(function(result) {
 				vm.showSpinner = false;
-				$location.path('/poem/' + result);
+				$location.path('/poem/random/' + result.data._id);
 			});
 		};
 

@@ -1,0 +1,43 @@
+.hero-random {
+	// background-color: #BFA889;	
+	margin-top: 100px;
+
+	.col-centered {
+		background-color: $lightBrownColor;
+		min-height: 300px;
+		padding-top: 50px;
+
+		h1 {
+			color: white;
+			font-family: 'Asap', sans-serif;
+			font-weight: 700;
+		}
+
+		p {
+			color: white;
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+		}
+
+		.random-input-wrapper {
+			padding-top: 25px;
+
+			// input {
+			// 	text-align: center;
+			// 	height: 50px;
+			// 	width: 75px;
+
+			// 	font-family: 'Lato', sans-serif;
+			// 	font-weight: 700;
+			// }
+
+			// span {
+			// 	font-family: 'Asap' ,sans-serif;
+			// 	color: white;
+			// 	font-weight: 700;
+			// 	margin-left: 10px;
+
+			// }
+		}
+	}
+}

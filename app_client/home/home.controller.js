@@ -7,6 +7,7 @@
 
 	function homeCtrl(poemApi, $location) {
 		var vm = this;
+		vm.num = 14;
 
 		vm.randPoem = function(num) {
 			/* Spinner */

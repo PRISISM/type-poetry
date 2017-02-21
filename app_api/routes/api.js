@@ -123,12 +123,12 @@ router.get('/search/:title', function(req, res) {
 /* Route that takes a search query and returns a list of authors */
 
 /* Route that takes `n` number of lines and returns all titles with their lines 
-   and author that have `n` number of lines 
+   and author that match `n` number of lines (eg. 14 will match 14 and 144).
 */
 router.get('/makerand/:number', function(req, res) {
 	var options = {
 		method: 'get',
-		uri: 'http://poetrydb.org/linecount/' + encodeURIComponent(req.params.number) + ':abs/lines,title,author',
+		uri: 'http://poetrydb.org/linecount/' + encodeURIComponent(req.params.number) + '/lines,title,author',
 		json: true
 
 	};
@@ -193,7 +193,7 @@ router.get('/makerand/:number', function(req, res) {
 });
 
 /* Query the database to get a poem from a string 
-*/
+	*/
 router.get('/getrand/:string', function(req, res) {
 	Poem.findOne({_id: req.params.string}, function(err, poem) {
 		if (err) {
