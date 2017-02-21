@@ -69,6 +69,9 @@ a {
 .main {
   height: 100%; }
 
+.social-wrapper {
+  padding-bottom: 10px; }
+
 .home-footer {
   width: 100%;
   font-family: 'Lato', sans-serif;
@@ -152,6 +155,13 @@ button.complement {
   text-align: center;
   padding: 6px 0;
   border-radius: 15px; }
+
+/* Responsive button styling */
+@media (min-width: 300px) {
+  .btn-responsive {
+    padding: 4px 9px;
+    font-size: 90%;
+    line-height: 1.2; } }
 
 .hero-home {
   height: 100%;

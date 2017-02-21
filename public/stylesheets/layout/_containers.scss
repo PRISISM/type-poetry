@@ -1,3 +1,10 @@
 .main {
 	height: 100%;
 }
+
+.social-wrapper {
+	padding-bottom: 10px;
+	@include respond-to('huge') {
+
+	};
+}

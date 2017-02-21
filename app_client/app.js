@@ -3,7 +3,8 @@
 		'ngAnimate',
 		'angularUtils.directives.dirPagination',
 		'focus-if',
-		'angularSpinner'
+		'angularSpinner',
+		'720kb.socialshare'
 	]);
 
 	// Module configuration

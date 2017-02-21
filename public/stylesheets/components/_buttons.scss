@@ -61,3 +61,12 @@ button.complement {
 	border-radius: 15px;
 }
 
+/* Responsive button styling */
+
+.btn-responsive {
+	@include respond-to('tiny') {
+		padding: 4px 9px;
+		font-size: 90%;
+		line-height: 1.2;
+	};
+}
