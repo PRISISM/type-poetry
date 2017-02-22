@@ -23,6 +23,7 @@ module.exports = function() {
 		scss: ['./public/stylesheets/**/*.scss'
 		],
 		svg: ['./public/svg/**/*.svg'],
+		audio: ['./public/audio/*.mp3'],
 		htmltemplates: './app_client/**/*.view.html',
 		injectOptions: {
 			// ignorePath: ['app_client', 'public']

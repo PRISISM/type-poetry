@@ -31,8 +31,6 @@ mongoose.connection.on('error',function (err) {
 
 require('./app_api/models/poem');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -43,12 +41,15 @@ app.use(cookieParser());
 switch (environment) {
   case 'build':
     console.log('--BUILD--');
+    app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
     app.use(express.static('./build/'));
     app.use('/public/svg', express.static('./build/svg'));
+    app.use('/public/audio', express.static('./build/svg'));
     app.set('views', path.join(__dirname, 'build'));
     break;
   default:
     console.log('--DEV--');
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     app.use('/public', express.static(path.join(__dirname, 'public')));
     app.use('/app_client', express.static(path.join(__dirname, 'app_client')));
     app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));

@@ -77,9 +77,7 @@
 
 		vm.play = function(name) {
 			var audio = document.getElementById(name);
-			console.log(audio);
 			if (audio.paused) {
-				console.log('Playing', name);
 				audio.play();
 			}
 			else {

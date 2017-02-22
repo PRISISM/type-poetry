@@ -15,7 +15,7 @@
 				controller: 'homeCtrl',
 				controllerAs: 'vm',
 				templateUrl: 'app_client/home/home.view.html',
-				title: 'Home'
+				title: 'Type Poetry'
 
 			})
 			.when('/poems', {

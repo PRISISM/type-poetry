@@ -81,6 +81,13 @@ gulp.task('fonts', ['clean-fonts'], function() {
 		.pipe((gulp.dest('./public/stylesheets')));
 });
 
+/* Copies audio to build folder */
+gulp.task('audio', function() {
+	return gulp
+		.src(config.audio)
+		.pipe(gulp.dest(config.build + '/audio/'));
+})
+
 /* Starts a development server using nodemon */
 gulp.task('serve-dev', ['inject', 'styles:watch'], function() {
 	serve(true /*Is Dev*/);
@@ -114,8 +121,13 @@ gulp.task('clean-code', function() {
 	return clean(files);
 });
 
+gulp.task('clean-audio', function() {
+	log('Cleaning Audio');
+	return clean(['./public/audio/*', './build/audio/*']);
+})
+
 /* Gulp task to produce an optimize production build in the ./build folder */
-gulp.task('optimize', ['inject', 'svg-min'], function() {
+gulp.task('optimize', ['inject', 'svg-min', 'audio'], function() {
 	// var assets = $.useref.assets({searchPath:'./'})
 	var cssFilter = $.filter('**/*.css', {restore: true});
 	var jsFilter = $.filter('**/*.js', {restore: true});

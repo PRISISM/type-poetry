@@ -69,8 +69,6 @@
             		</div>    
 
             	</div>
-
-        	
             </div>
         </div>
     </div>
@@ -106,12 +104,10 @@
                         <div ng-if="vm.poemIndex == $index">
                             <textarea class=" typed poem-text" type="text" ng-model="vm.typedPoem[$index]" ng-change="vm.check(vm.typedPoem[$index], $index)" focus-if required></textarea>
                             <textarea class=" type poem-text" type="text" placeholder="{{line}}" disabled></textarea>
-                            <!-- <p>{{vm.typedPoem[$index]}}</p> -->
-                            <!-- <span>{{vm.typedPoem[$index] == line}}</span> -->
+
                         </div>
                     </div>
-                    <button ng-click="vm.next()"> Next </button>
-                    <button ng-click="vm.done= !vm.done">Done</button>
+
                 </div>
             </div>
         </div>

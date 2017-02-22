@@ -3,17 +3,8 @@
     <div class="hero-poem">
         <div class="container">
             <div class="row">
-            	<div class="col-xs-3">
-<!-- 					
-					<div class="btn-toolbar" role="toolbar" >
-						<div class="btn-group mr-2" role="group">
-							<button type="button" class="btn btn-default">A</button>
-							<button type="button" class="btn btn-default">B</button>
-						</div>
-					</div> -->
-            	</div>
 
-            	<div class="col-xs-6">
+                <div class="col-xs-6 col-xs-offset-3">
                     <div class="hero-poem-heading">
                         <h1>Random {{vm.poem.length}} line poem</h1>
                         <p>Hover over lines in the transcript to see where they originated from!</p>
@@ -21,19 +12,66 @@
                         <p>{{vm.poemIndex}} / {{vm.poem.length}} lines</p>
                     </div>
             	</div>
-
-            	<div class="col-xs-3">
-
-            	</div>
-<!--                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="hero-poem-heading">
-                        <h1 ng-bind="vm.poem.title"></h1>
-                        <p>by <a ng-href="author/{{vm.poem.author}}">{{vm.poem.author}}</a></p>
-                        <br>
-                        <p>{{vm.poemIndex}} / {{vm.poem.lines.length}} lines</p>
-                    </div>
-                </div> -->
             </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="audio-wrapper pull-left">
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Rain" data-placement="bottom" tooltip ng-click="vm.play('rain')">
+                                <i class="fa fa-umbrella" aria-hidden="true"></i>
+                            </button>
+
+                            <audio id="rain" loop="true">
+                                <source src="public/audio/rain.mp3" type="audio/mpeg">
+                            </audio>
+
+                            <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Coffee" data-placement="bottom" tooltip ng-click="vm.play('coffee')"> 
+                                <i class="fa fa-coffee" aria-hidden="true"></i>
+                            </button>
+
+                            <audio id="coffee" loop="true">
+                                <source src="public/audio/coffee.mp3" type="audio/mpeg">
+                            </audio>
+
+                            <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="College" data-placement="bottom" tooltip ng-click="vm.play('college')">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </button>
+
+                            <audio id="college" loop="true">
+                                <source src="public/audio/library.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="social-wrapper pull-right">
+                        <button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="twitter" socialshare-text="Retype this poem on Type Poetry!"
+                        socialshare-url="{{$location.absUrl()}}">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                             Share
+                        </button>
+
+                        <button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="facebook" socialshare-text="Retype this poem on Type Poetry!"
+                        socialshare-url="{{$location.absUrl()}}">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                             Share
+                        </button>
+
+                        <button class="btn btn-default btn-responsive" href="#" socialshare socialshare-provider="tumblr" socialshare-text="Retype this poem on Type Poetry!"
+                        socialshare-url="{{$location.absUrl()}}">
+                            <i class="fa fa-tumblr" aria-hidden="true"></i>
+                             Share
+                        </button>
+                    </div>    
+
+                </div>
+
+            
+            </div>
+
         </div>
     </div>
     <!-- Poem Section -->
