@@ -1,7 +1,7 @@
 <div class="main">
     <!-- Main Section -->
     <div class="hero-poem">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 
                 <div class="col-xs-6 col-xs-offset-3">
@@ -81,7 +81,7 @@
                 <div class="col-sm-4 transcript-wrapper text-center">
                     <h1>Transcript</h1>
                     <div class="transcript-text" data-simplebar>
-	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" data-simplebar>
+	                    <p ng-repeat="typedLine in vm.typedPoem track by $index" style="height:20px;">
 	                        <span title="From '{{vm.poem[$index].title}}'' by {{vm.poem[$index].author}}">{{typedLine}}</span>
 							
 							<br ng-if="vm.poem.lines[$index] == false">
@@ -99,7 +99,7 @@
 						<div class="row row-centered">
 							<button class="flat-button base" ng-click="vm.reloadRoute()">Repeat this poem!</button>
 							<button class="flat-button accent" ng-click="vm.randomPoem()">Generate a new poem!</button>
-							<button class="flat-button complement">Share this poem!</button>
+							<!-- <button class="flat-button complement">Share this poem!</button> -->
 						</div>
 					</div>
                     <div ng-repeat="line in vm.trimmedLines track by $index">
@@ -108,12 +108,10 @@
                             ng-change="vm.check(vm.typedPoem[$index], $index)" 
                             focus-if required></textarea>
                             <textarea class=" type poem-text" type="text" placeholder="{{line}}" disabled></textarea>
-                            <!-- <p>{{vm.typedPoem[$index]}}</p> -->
-                            <!-- <span>{{vm.typedPoem[$index] == line}}</span> -->
+
                         </div>
                     </div>
-                    <button ng-click="vm.next()"> Next </button>
-                    <button ng-click="vm.done= !vm.done">Done</button>
+
                 </div>
             </div>
         </div>
