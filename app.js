@@ -44,7 +44,7 @@ switch (environment) {
     app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
     app.use(express.static('./build/'));
     app.use('/public/svg', express.static('./build/svg'));
-    app.use('/public/audio', express.static('./build/svg'));
+    app.use('/public/audio', express.static('./build/audio'));
     app.set('views', path.join(__dirname, 'build'));
     break;
   default:
