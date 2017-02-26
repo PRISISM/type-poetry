@@ -50,13 +50,6 @@
 				templateUrl: 'app_client/author/author.view.html'
 			})
 
-			.when('/404', {
-				controller: 'errorCtrl',
-				controllerAs: 'vm',
-				templateUrl: 'app_client/error/404.view.html',
-				title: 'Error!'
-			})
-
 			.otherwise({
 				redirectTo: '/'
 			});
