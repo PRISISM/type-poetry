@@ -3,9 +3,9 @@
 		.module('myApp')
 		.controller('randomCtrl', randomCtrl);
 
-	randomCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi', '$route', '$location'];
+	randomCtrl.$inject = ['$http', '$routeParams', '$window', 'poemApi', '$route', '$location', 'ngAudio'];
 
-	function randomCtrl($http, $routeParams, $window, poemApi, $route, $location) {
+	function randomCtrl($http, $routeParams, $window, poemApi, $route, $location, ngAudio) {
 		var vm = this;
 		var title = $routeParams.title;
 		vm.done = false; // When user is finished writing
@@ -14,6 +14,10 @@
 
 		vm.showSpinner = true;
 		var poemPromise = poemApi.getRandomPoemUrl(title);
+
+		vm.rain = ngAudio.load('public/audio/rain.mp3');
+		vm.coffee = ngAudio.load('public/audio/coffee.mp3');
+		vm.college = ngAudio.load('public/audio/library.mp3');
 
 		poemPromise.then(function(result) {
 			if (result.data === null) { // if there is no match 
@@ -60,7 +64,6 @@
 			if (vm.poemIndex >= vm.trimmedLines.length - 1) {
 				vm.poemIndex++;
 				vm.done = true;
-				console.log('reached end');
 			} else {
 				vm.poemIndex++;
 				/* Check if caesura */

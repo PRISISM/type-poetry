@@ -34,7 +34,7 @@
 
 		vm.rain = ngAudio.load('public/audio/rain.mp3');
 		vm.coffee = ngAudio.load('public/audio/coffee.mp3');
-		vm.college = ngAudio.load('public/audio/college.mp3');
+		vm.college = ngAudio.load('public/audio/library.mp3');
 
 		/* Compares the current string to the respective line in the poem array */
 		vm.check = function(typed, index) {
@@ -51,7 +51,6 @@
 			if (vm.poemIndex >= vm.poem.lines.length - 1) {
 				vm.poemIndex++;
 				vm.done = true;
-				console.log('reached end');
 			} else {
 				vm.poemIndex++;
 				/* Check if caesura */
