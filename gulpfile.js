@@ -137,6 +137,11 @@ gulp.task('optimize', ['inject', 'svg-min', 'audio'], function() {
 		.src('./public/fonts/*')
 		.pipe(gulp.dest(config.build + '/fonts'));
 
+	log('Copying favicon to build folder...');
+	gulp
+		.src('./public/favicon.ico')
+		.pipe(gulp.dest(config.build));
+
 	log('Optimizing the javascript, css and html');
 
 	var templateCache = config.temp + config.templateCache.file;

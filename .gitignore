@@ -4,3 +4,4 @@
 .gitold
 /bower_components
 /build
+.tmp

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "NODE_ENV=build pm2 start ./bin/www"
   },
   "dependencies": {
     "angular-utils-pagination": "^0.11.1",
