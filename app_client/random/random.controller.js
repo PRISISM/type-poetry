@@ -12,12 +12,12 @@
 
 		$window.document.title = title;
 
-		vm.showSpinner = true;
-		var poemPromise = poemApi.getRandomPoemUrl(title);
-
 		vm.rain = ngAudio.load('public/audio/rain.mp3');
 		vm.coffee = ngAudio.load('public/audio/coffee.mp3');
 		vm.college = ngAudio.load('public/audio/library.mp3');
+
+		vm.showSpinner = true;
+		var poemPromise = poemApi.getRandomPoemUrl(title);
 
 		poemPromise.then(function(result) {
 			if (result.data === null) { // if there is no match 
@@ -88,6 +88,16 @@
 				vm.showSpinner = false;
 				$location.path('/poem/random/' + result.data._id);
 			});
+		};
+
+		vm.play = function(name) {
+			var audio = vm[name];
+			if (audio.paused) {
+				audio.play();
+			}
+			else {
+				audio.pause();
+			}
 		};
 
 	}

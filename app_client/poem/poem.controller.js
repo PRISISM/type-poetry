@@ -10,6 +10,10 @@
 		var title = $routeParams.title;
 		vm.done = false; // When user is finished writing
 
+		vm.rain = ngAudio.load('public/audio/rain.mp3');
+		vm.coffee = ngAudio.load('public/audio/coffee.mp3');
+		vm.college = ngAudio.load('public/audio/library.mp3');
+
 		$window.document.title = title;
 
 		vm.showSpinner = true;
@@ -32,9 +36,7 @@
 			vm.poemIndex = 0;
 		});
 
-		vm.rain = ngAudio.load('public/audio/rain.mp3');
-		vm.coffee = ngAudio.load('public/audio/coffee.mp3');
-		vm.college = ngAudio.load('public/audio/library.mp3');
+
 
 		/* Compares the current string to the respective line in the poem array */
 		vm.check = function(typed, index) {
@@ -74,6 +76,15 @@
 				$location.path('/poem/' + result);
 			});
 		};
-
+		
+		vm.play = function(name) {
+			var audio = vm[name];
+			if (audio.paused) {
+				audio.play();
+			}
+			else {
+				audio.pause();
+			}
+		};
 	}
 })();
