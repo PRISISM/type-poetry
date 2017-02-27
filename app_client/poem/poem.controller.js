@@ -76,9 +76,10 @@
 				$location.path('/poem/' + result);
 			});
 		};
-		
+
 		vm.play = function(name) {
 			var audio = vm[name];
+			audio.volume = 0.6;
 			if (audio.paused) {
 				audio.play();
 			}
