@@ -25,6 +25,15 @@
     -webkit-transform: none;
     transform: none; } }
 
+.color-fade {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in; }
+
+.color-fade:hover {
+  color: white; }
+
 /* Box Shadow 1 */
 /* Responsive Breakpoint Manager */
 /* Box Shadow for Poem Buttons */
