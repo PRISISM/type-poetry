@@ -168,6 +168,9 @@ button.complement {
     font-family: 'Lato', Helvetica, sans-serif;
     border-color: #d3d3d3; } }
 
+.btn-playing {
+  color: #BEAD50; }
+
 .hero-home {
   height: 100%;
   background-color: #66624c; }

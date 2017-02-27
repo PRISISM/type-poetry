@@ -19,18 +19,18 @@
                     <div class="audio-wrapper pull-left">
                         <div class="btn-group" role="group">
                             <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Rain" data-placement="bottom" tooltip ng-click="vm.play('rain')">
-                                <i class="fa fa-umbrella" aria-hidden="true"></i>
+                                <i class="fa fa-umbrella" aria-hidden="true" ng-class="vm.rain.paused ? 'btn-paused' : 'btn-playing' "></i>
                             </button>
 
                             <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="Coffee" data-placement="bottom" tooltip ng-click="vm.play('coffee')"> 
-                                <i class="fa fa-coffee" aria-hidden="true"></i>
+                                <i class="fa fa-coffee" aria-hidden="true" ng-class="vm.coffee.paused ? 'btn-paused' : 'btn-playing' "></i>
                             </button>
 
                             <button class="btn btn-default btn-responsive" data-toggle="tooltip" title="College" data-placement="bottom" tooltip ng-click="vm.play('college')">
-                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <i class="fa fa-book" aria-hidden="true" ng-class="vm.college.paused ? 'btn-paused' : 'btn-playing' "></i>
                             </button>
-                            
                         </div>
+                    </div>
 
                     </div>
 
