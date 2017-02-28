@@ -91,6 +91,22 @@ a {
   color: #606060;
   margin-top: 10px;
   margin-bottom: 10px; }
+  @media (min-width: 300px) {
+    .home-footer {
+      font-size: 12px; } }
+  @media (min-width: 600px) {
+    .home-footer {
+      font-size: 14px; } }
+  .home-footer span {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #d3d3d3; }
+    .home-footer span a {
+      color: #BEAD50;
+      text-decoration: none; }
+  .home-footer a {
+    color: #BEAD50;
+    text-decoration: none; }
 
 .navbar-brand {
   position: absolute;

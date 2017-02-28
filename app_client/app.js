@@ -50,6 +50,10 @@
 				templateUrl: 'app_client/author/author.view.html'
 			})
 
+			.when('/copyright', {
+				templateUrl: 'app_client/copyright/copyright.view.html'
+			})
+
 			.otherwise({
 				redirectTo: '/'
 			});
